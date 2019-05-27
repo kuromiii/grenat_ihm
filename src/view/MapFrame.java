@@ -9,7 +9,6 @@ public class MapFrame extends JPanel {
   private JTextField depart;
   private JTextField arrive;
   private JTextArea info;
-  private JEditorPane map;
 
   /**
     *Create a new MapFrame object
@@ -26,7 +25,6 @@ public class MapFrame extends JPanel {
       this.depart = new JTextField("Adresse de depart");
       this.arrive = new JTextField("Adresse d'arrivee");
       this.info = new JTextArea("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-      this.map = new JEditorPane();
 
       this.left.setLayout(new BorderLayout());
       this.info.setEditable(false);
@@ -43,16 +41,6 @@ public class MapFrame extends JPanel {
       upperLeft.add(itineraire,BorderLayout.NORTH);
       upperLeft.add(this.info,BorderLayout.SOUTH);
       add(upperLeft, BorderLayout.WEST);
-
-      map.setEditable(false);
-
-      try {
-        map.setPage("https://www.google.fr/maps/preview");
-      }
-      catch (IOException e) {
-        map.setContentType("text/html");
-        map.setText("<html>Could not load</html>");
-      }
 
       add(new JLabel(new ImageIcon("../img/map.png")),BorderLayout.CENTER);
     }
