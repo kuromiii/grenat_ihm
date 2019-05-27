@@ -25,7 +25,7 @@ public class MapFrame extends JPanel {
       this.left = new JPanel();
       this.depart = new JTextField("Adresse de depart");
       this.arrive = new JTextField("Adresse d'arrivee");
-      this.info = new JTextArea("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+      this.info = new JTextArea("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
       this.map = new JEditorPane();
 
       this.left.setLayout(new BorderLayout());
