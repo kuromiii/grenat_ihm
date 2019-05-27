@@ -44,14 +44,14 @@ public class MapFrame extends JPanel {
       map.setEditable(false);
 
       try {
-        map.setPage("https://www.google.fr/maps/place/Institut+universitaire+de+technologie+de+Vannes/@47.6443485,-2.7789655,17z/data=!3m1!4b1!4m5!3m4!1s0x48101c1b20908af1:0x713f2c3d129c6baf!8m2!3d47.6443485!4d-2.7767768");
+        map.setPage("https://www.google.fr/maps/preview");
       }
       catch (IOException e) {
         map.setContentType("text/html");
         map.setText("<html>Could not load</html>");
       }
 
-      add(map, BorderLayout.CENTER);
+      add(new JLabel(new ImageIcon("../img/map.png")),BorderLayout.CENTER);
     }
 
 }
