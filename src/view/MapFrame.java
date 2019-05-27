@@ -29,16 +29,18 @@ public class MapFrame extends JPanel {
       this.map = new JEditorPane();
 
       this.left.setLayout(new BorderLayout());
-      JPanel upperLeft = new JPanel(new GridLayout(2,1));
+      JPanel upperLeft = new JPanel(new BorderLayout());
+      JPanel itineraire = new JPanel(new GridLayout(2,1));
       JPanel d = new JPanel(new GridLayout(1,2));
       d.add(this.depart);
       d.add(new JLabel(new ImageIcon("../img/Pin.png")));
-      upperLeft.add(d);
+      itineraire.add(d);
       JPanel a = new JPanel(new GridLayout(1,2));
       a.add(this.arrive);
       a.add(new JLabel(new ImageIcon("../img/HousePin.png")));
-      upperLeft.add(a);
-      upperLeft.add(this.info);
+      itineraire.add(a);
+      upperLeft.add(itineraire,BorderLayout.NORTH);
+      upperLeft.add(this.info,BorderLayout.CENTER);
       add(upperLeft, BorderLayout.WEST);
 
       map.setEditable(false);
