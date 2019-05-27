@@ -8,4 +8,5 @@ pause
 javadoc -encoding utf8 -docencoding utf8 -charset utf8 -private -d ../doc ../src/controller/*.java
 javadoc -encoding utf8 -docencoding utf8 -charset utf8 -private -d ../doc ../src/view/*.java
 javadoc -encoding utf8 -docencoding utf8 -charset utf8 -private -d ../doc ../src/model/*.java
+java view/MainFrame
 pause
