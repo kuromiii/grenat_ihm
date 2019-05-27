@@ -12,7 +12,6 @@ public class VehicleFrame extends JPanel {
     JButton bus = new JButton(new ImageIcon("../img/Bus.png"));
     JButton metro = new JButton(new ImageIcon("../img/Metro.png"));
     JButton train = new JButton(new ImageIcon("../img/Train.png"));
-    buttons.add();
 
   }
 }
