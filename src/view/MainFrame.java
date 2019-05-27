@@ -34,7 +34,7 @@ public class MainFrame extends JFrame {
     //this.switchablePanel = new JPanel(new CardLayout());
     this.switchablePanel = new MapFrame();
 
-    this.add(this.topBar, BorderLayout.WEST);
+    this.add(this.topBar, BorderLayout.NORTH);
     this.add(this.switchablePanel, BorderLayout.CENTER);
   }
 

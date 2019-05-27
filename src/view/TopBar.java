@@ -9,6 +9,8 @@ public class TopBar extends JPanel {
   JButton Agenda;
   JButton Parametres;
 
+  private static final Color COLOR = new Color(255, 138, 128);
+
   public TopBar() {
     this.logo = new ImageIcon("../img/LogoSmall.png");
     this.Itineraire = new JButton("Itinéraire");
@@ -21,9 +23,10 @@ public class TopBar extends JPanel {
     b.add(this.Fonctionnel);
     b.add(this.Agenda);
     b.add(this.Parametres);
+    b.setBackground(COLOR);
 
     add(new JLabel(this.logo));
     add(b);
-    setBackground(new Color(198,40,40));
+    setBackground(COLOR);
   }
 }
