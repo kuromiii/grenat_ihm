@@ -25,7 +25,7 @@ public class MapFrame extends JPanel {
       this.left = new JPanel();
       this.depart = new JTextField("Adresse de depart");
       this.arrive = new JTextField("Adresse d'arrivee");
-      this.info = new JTextArea("\n\n\n\n\n\n\n\n\n\n");
+      this.info = new JTextArea("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
       this.map = new JEditorPane();
 
       this.left.setLayout(new BorderLayout());
@@ -40,7 +40,7 @@ public class MapFrame extends JPanel {
       a.add(new JLabel(new ImageIcon("../img/HousePin.png")));
       itineraire.add(a);
       upperLeft.add(itineraire,BorderLayout.NORTH);
-      upperLeft.add(this.info,BorderLayout.CENTER);
+      upperLeft.add(this.info,BorderLayout.SOUTH);
       add(upperLeft, BorderLayout.WEST);
 
       map.setEditable(false);
