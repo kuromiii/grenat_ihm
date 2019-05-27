@@ -51,6 +51,7 @@ public class MapFrame extends JPanel {
         map.setText("<html>Could not load</html>");
       }
 
+      add(map, BorderLayout.CENTER);
     }
 
 }
