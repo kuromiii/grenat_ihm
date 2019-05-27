@@ -11,14 +11,14 @@ public class MapFrame extends JPanel {
   private JTextArea info;
 
   /**
-    *Create a new MapFrame object
+    *Creates a new MapFrame object
     */
     public MapFrame() {
       initComponent();
     }
 
   /**
-    *Initialize the components
+    *Initializes the components
     */
     public void initComponent() {
       this.left = new JPanel();
