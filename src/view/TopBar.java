@@ -10,7 +10,7 @@ public class TopBar extends JPanel {
   JButton Parametres;
 
   public TopBar() {
-    this.logo = new ImageIcon("../img/logo.png");
+    this.logo = new ImageIcon("../img/LogoSmall.png");
     this.Itineraire = new JButton("Itinéraire");
     this.Fonctionnel = new JButton("Fonctionnel");
     this.Agenda = new JButton("Agenda");

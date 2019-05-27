@@ -16,7 +16,7 @@ public class MainFrame extends JFrame {
     // Set logo
     this.setIconImage(new ImageIcon(("../img/Logo.png")).getImage());
 
-    this.getContentPane().setLayout(new GridLayout(2,2));
+    this.getContentPane().setLayout(new BorderLayout());
 
     this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
@@ -25,10 +25,17 @@ public class MainFrame extends JFrame {
 
     // Adjust size
     this.pack();
+
+    this.setVisible(true);
   }
 
   private void initComponents() {
+    this.topBar = new TopBar();
+    //this.switchablePanel = new JPanel(new CardLayout());
+    this.switchablePanel = new MapFrame();
 
+    this.add(this.topBar, BorderLayout.WEST);
+    this.add(this.switchablePanel, BorderLayout.CENTER);
   }
 
   public static void main(String args[]) {
