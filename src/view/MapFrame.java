@@ -34,7 +34,7 @@ public class MapFrame extends JPanel {
       d.add(this.depart);
       d.add(new JLabel(new ImageIcon("../img/Pin.png")));
       upperLeft.add(d);
-      JPanel a = new JPanel(new GridLayout(2,1));
+      JPanel a = new JPanel(new GridLayout(1,2));
       a.add(this.arrive);
       a.add(new JLabel(new ImageIcon("../img/HousePin.png")));
       upperLeft.add(a);
@@ -44,7 +44,7 @@ public class MapFrame extends JPanel {
       map.setEditable(false);
 
       try {
-        map.setPage("https://www.google.fr/maps/preview");
+        map.setPage("https://www.openstreetmap.fr/");
       }
       catch (IOException e) {
         map.setContentType("text/html");
