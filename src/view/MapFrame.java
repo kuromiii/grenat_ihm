@@ -41,6 +41,7 @@ public class MapFrame extends JPanel {
       upperLeft.add(a);
       upperLeft.add(this.info);
       add(upperLeft, BorderLayout.WEST);
+      add(top, BorderLayout.NORTH);
     }
 
 }
