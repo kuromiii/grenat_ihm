@@ -1,10 +1,10 @@
 package view;
 import java.awt.*;
 import javax.swing.*;
+import java.io.IOException;
 
 public class MapFrame extends JPanel {
 
-  private TopBar top;
   private JPanel left;
   private JTextField depart;
   private JTextField arrive;
@@ -22,10 +22,9 @@ public class MapFrame extends JPanel {
     *Initialize the components
     */
     public void initComponent() {
-      this.top = new TopBar();
       this.left = new JPanel();
-      this.depart = new JTextField("Adresse de départ");
-      this.arrive = new JTextField("Adresse d'arrivée");
+      this.depart = new JTextField("Adresse de depart");
+      this.arrive = new JTextField("Adresse d'arrivee");
       this.info = new JTextArea();
       this.map = new JEditorPane();
 
@@ -41,7 +40,17 @@ public class MapFrame extends JPanel {
       upperLeft.add(a);
       upperLeft.add(this.info);
       add(upperLeft, BorderLayout.WEST);
-      add(top, BorderLayout.NORTH);
+
+      map.setEditable(false);
+
+      try {
+        map.setPage("https://www.google.fr/maps/preview");
+      }
+      catch (IOException e) {
+        map.setContentType("text/html");
+        map.setText("<html>Could not load</html>");
+      }
+
     }
 
 }
