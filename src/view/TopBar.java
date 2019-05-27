@@ -24,6 +24,6 @@ public class TopBar extends JPanel {
 
     add(new JLabel(this.logo));
     add(b);
-    setBackground(Color.BLUE);
+    setBackground(new Color(0,176,255));
   }
 }
