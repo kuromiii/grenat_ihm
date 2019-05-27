@@ -29,6 +29,7 @@ public class MapFrame extends JPanel {
       this.map = new JEditorPane();
 
       this.left.setLayout(new BorderLayout());
+      this.info.setEditable(false);
       JPanel upperLeft = new JPanel(new BorderLayout());
       JPanel itineraire = new JPanel(new GridLayout(2,1));
       JPanel d = new JPanel(new GridLayout(1,2));
