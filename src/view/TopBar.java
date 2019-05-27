@@ -22,5 +22,7 @@ public class TopBar extends JPanel {
     b.add(this.Agenda);
     b.add(this.Parametres);
 
+    add(new JLabel(this.logo));
+    add(b);
   }
 }
