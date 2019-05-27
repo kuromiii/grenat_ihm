@@ -9,7 +9,10 @@ public class VehicleFrame extends JPanel {
     JTextField msg = new JTextField("Bonjour\nQuel moyen de transport voulez-vous utiliser aujourd'hui ?");
     JPanel buttons = new JPanel();
 
-    JButton bus = new JButton()
-    buttons.add(new ImageIcon("../img/Bus.png"));
+    JButton bus = new JButton(new ImageIcon("../img/Bus.png"));
+    JButton metro = new JButton(new ImageIcon("../img/Metro.png"));
+    JButton train = new JButton(new ImageIcon("../img/Train.png"));
+    buttons.add();
+
   }
 }
