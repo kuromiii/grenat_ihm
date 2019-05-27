@@ -1,4 +1,5 @@
 package view;
+
 import java.awt.*;
 import javax.swing.*;
 
@@ -9,11 +10,22 @@ public class TopBar extends JPanel {
   JButton Agenda;
   JButton Parametres;
 
-  private static final Color COLOR = new Color(255, 138, 128);
+  private static final Color COLOR = new Color(173, 20, 87);
 
   public TopBar() {
+    try {
+			UIManager.setLookAndFeel (UIManager.getSystemLookAndFeelClassName());
+		}
+		catch (UnsupportedLookAndFeelException e) {
+			e.printStackTrace ();
+		}
+    catch (ReflectiveOperationException e) {
+      e.printStackTrace ();
+    }
+
+
     this.logo = new ImageIcon("../img/LogoSmall.png");
-    this.Itineraire = new JButton("Itinéraire");
+    this.Itineraire = new JButton("Itineraire");
     this.Fonctionnel = new JButton("Fonctionnel");
     this.Agenda = new JButton("Agenda");
     this.Parametres = new JButton("Parametres");
@@ -25,8 +37,8 @@ public class TopBar extends JPanel {
     b.add(this.Parametres);
     b.setBackground(COLOR);
 
-    add(new JLabel(this.logo));
-    add(b);
-    setBackground(COLOR);
+    this.add(new JLabel(this.logo));
+    this.add(b);
+    this.setBackground(COLOR);
   }
 }
