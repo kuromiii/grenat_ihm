@@ -48,7 +48,7 @@ public class MapFrame extends JPanel {
       public void run() {
         new MapFrame().setVisible(true);
       }
-    })
+    });
   }
 
 }
