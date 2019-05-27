@@ -33,10 +33,22 @@ public class MapFrame extends JPanel {
       JPanel upperLeft = new JPanel(new GridLayout(2,1));
       JPanel d = new JPanel(new GridLayout(1,2));
       d.add(this.depart);
-      d.add(new ImageIcon("pin.png"));
+      d.add(new JTextArea());
       upperLeft.add(d);
+      JPanel a = new JPanel(new GridLayout(2,1));
+      a.add(this.arrive);
+      a.add(new JTextArea());
+      upperLeft.add(a);
       upperLeft.add(this.info);
       add(upperLeft, BorderLayout.WEST);
     }
+
+  public static void main(String[] args) {
+    EventQueue.invokeLater(new Runnable() {
+      public void run() {
+        new MapFrame().setVisible(true);
+      }
+    })
+  }
 
 }
