@@ -31,13 +31,13 @@ public class MainMenuFrame extends JPanel {
 
 
       Image img = (new ImageIcon("../img/Itinéraire.png")).getImage();
-      Image newImg = img.getScaledInstance(30,30,Image.SCALE_SMOOTH);
+      Image newImg = img.getScaledInstance(120,120,Image.SCALE_SMOOTH);
       boutonItineraire.setIcon(new ImageIcon(newImg));
       Image img2 = (new ImageIcon("../img/Agenda.png")).getImage();
-      Image newImg2 = img2.getScaledInstance(30,30,Image.SCALE_SMOOTH);
+      Image newImg2 = img2.getScaledInstance(120,120,Image.SCALE_SMOOTH);
       boutonAgenda.setIcon(new ImageIcon(newImg2));
       Image img3 = (new ImageIcon("../img/Transport.png")).getImage();
-      Image newImg3 = img.getScaledInstance(30,30,Image.SCALE_SMOOTH);
+      Image newImg3 = img.getScaledInstance(120,120,Image.SCALE_SMOOTH);
       boutonTransport.setIcon(new ImageIcon(newImg3));
 
 
@@ -46,10 +46,11 @@ public class MainMenuFrame extends JPanel {
       JPanel centralPanel = new JPanel(new GridLayout(1,3));
       JPanel itineraire = new JPanel(new BorderLayout());
       itineraire.add(boutonItineraire,BorderLayout.CENTER);
-      itineraire.add(boutonItineraire,BorderLayout.SOUTH);
+      itineraire.add(boutonItineraireTexte,BorderLayout.SOUTH);
       centralPanel.add(itineraire);
       JPanel agenda = new JPanel(new BorderLayout());
       agenda.add(boutonAgenda,BorderLayout.CENTER);
+      agenda.add(boutonAgendaTexte,BorderLayout.SOUTH);
       centralPanel.add(agenda,BorderLayout.SOUTH);
       JPanel transports = new JPanel (new BorderLayout());
       transports.add(boutonTransport,BorderLayout.CENTER);

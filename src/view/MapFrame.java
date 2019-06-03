@@ -41,8 +41,11 @@ public class MapFrame extends JPanel {
       upperLeft.add(itineraire,BorderLayout.NORTH);
       upperLeft.add(this.info,BorderLayout.SOUTH);
       add(upperLeft, BorderLayout.WEST);
-
-      add(new JLabel(new ImageIcon("../img/map.png")),BorderLayout.CENTER);
+      JPanel center = new JPanel(new BorderLayout());
+      add(center,BorderLayout.CENTER);
+      Image originalImage = (new ImageIcon("../img/map.png")).getImage();
+      Image scaledImage = originalImage.getScaledInstance(center.getWidth(),center.getHeight(),Image.SCALE_SMOOTH);
+      center.add(new JLabel(scaledImage));
     }
 
 }
