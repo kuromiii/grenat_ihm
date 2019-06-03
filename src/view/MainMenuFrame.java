@@ -30,7 +30,7 @@ public class MainMenuFrame extends JPanel {
       boutonTransportTexte = new JButton("Transports");
 
 
-      Image img = (new ImageIcon("../img/Itinéraire.png")).getImage();
+      Image img = (new ImageIcon("../img/Itineraire.png")).getImage();
       Image newImg = img.getScaledInstance(120,120,Image.SCALE_SMOOTH);
       boutonItineraire.setIcon(new ImageIcon(newImg));
       Image img2 = (new ImageIcon("../img/Agenda.png")).getImage();
