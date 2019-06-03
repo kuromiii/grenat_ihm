@@ -49,13 +49,12 @@ public class MainMenuFrame extends JPanel {
       itineraire.add(boutonItineraire,BorderLayout.SOUTH);
       centralPanel.add(itineraire);
       JPanel agenda = new JPanel(new BorderLayout());
-      agenda.add(boutonAgenda);
-      agenda.add(boutonAgendaTexte);
-      centralPanel.add(agenda);
+      agenda.add(boutonAgenda,BorderLayout.CENTER);
+      centralPanel.add(agenda,BorderLayout.SOUTH);
       JPanel transports = new JPanel (new BorderLayout());
-      transports.add(boutonTransport);
-      transports.add(boutonTransportTexte);
+      transports.add(boutonTransport,BorderLayout.CENTER);
+      transports.add(boutonTransportTexte,BorderLayout.SOUTH);
       centralPanel.add(transports);
-      add(transports,BorderLayout.CENTER);
+      add(centralPanel,BorderLayout.CENTER);
     }
 }
