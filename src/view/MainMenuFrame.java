@@ -37,9 +37,8 @@ public class MainMenuFrame extends JPanel {
       Image newImg2 = img2.getScaledInstance(120,120,Image.SCALE_SMOOTH);
       boutonAgenda.setIcon(new ImageIcon(newImg2));
       Image img3 = (new ImageIcon("../img/Transport.png")).getImage();
-      Image newImg3 = img.getScaledInstance(120,120,Image.SCALE_SMOOTH);
+      Image newImg3 = img3.getScaledInstance(120,120,Image.SCALE_SMOOTH);
       boutonTransport.setIcon(new ImageIcon(newImg3));
-
 
       setLayout(new BorderLayout());
 
@@ -47,15 +46,38 @@ public class MainMenuFrame extends JPanel {
       JPanel itineraire = new JPanel(new BorderLayout());
       itineraire.add(boutonItineraire,BorderLayout.CENTER);
       itineraire.add(boutonItineraireTexte,BorderLayout.SOUTH);
-      centralPanel.add(itineraire);
+
+      JPanel itineraireContainer = new JPanel(new GridLayout(5,1));
+      itineraireContainer.add(new JPanel());
+      itineraireContainer.add(new JPanel());
+      itineraireContainer.add(itineraire);
+      itineraireContainer.add(new JPanel());
+      itineraireContainer.add(new JPanel());
+      centralPanel.add(itineraireContainer);
+
       JPanel agenda = new JPanel(new BorderLayout());
       agenda.add(boutonAgenda,BorderLayout.CENTER);
       agenda.add(boutonAgendaTexte,BorderLayout.SOUTH);
-      centralPanel.add(agenda,BorderLayout.SOUTH);
+
+      JPanel agendaContainer = new JPanel(new GridLayout(5,1));
+      agendaContainer.add(new JPanel());
+      agendaContainer.add(new JPanel());
+      agendaContainer.add(agenda);
+      agendaContainer.add(new JPanel());
+      agendaContainer.add(new JPanel());
+      centralPanel.add(agendaContainer);
+
       JPanel transports = new JPanel (new BorderLayout());
       transports.add(boutonTransport,BorderLayout.CENTER);
       transports.add(boutonTransportTexte,BorderLayout.SOUTH);
-      centralPanel.add(transports);
+
+      JPanel transportsContainer = new JPanel(new GridLayout(5,1));
+      transportsContainer.add(new JPanel());
+      transportsContainer.add(new JPanel());
+      transportsContainer.add(transports);
+      transportsContainer.add(new JPanel());
+      transportsContainer.add(new JPanel());
+      centralPanel.add(transportsContainer);
       add(centralPanel,BorderLayout.CENTER);
     }
 }
