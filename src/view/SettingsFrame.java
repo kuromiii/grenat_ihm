@@ -20,6 +20,12 @@ public class SettingsFrame extends JPanel {
   }
 
   public void initComponents() {
+    JPanel main = new JPanel(new BorderLayout());
 
+    String[] settings = {"Apparence", "Accessibilite", "Notifications",
+     "Utilisation de la betterie", "Utilisation du reseau"};
+    JList<String> list = new JList<String>(settings);
+    main.add(list, BorderLayout.WEST);
+    this.add(main);
   }
 }

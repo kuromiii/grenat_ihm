@@ -39,7 +39,7 @@ public class MapFrame extends JPanel {
       a.add(new JLabel(new ImageIcon("../img/HousePin.png")));
       itineraire.add(a);
       upperLeft.add(itineraire,BorderLayout.NORTH);
-      upperLeft.add(this.info,BorderLayout.SOUTH);
+      //upperLeft.add(this.info,BorderLayout.SOUTH);
       add(upperLeft, BorderLayout.WEST);
     //  Image originalImage = (new ImageIcon("../img/map.png")).getImage();
     //  Image scaledImage = originalImage.getScaledInstance(center.getWidth(),center.getHeight(),Image.SCALE_SMOOTH);
