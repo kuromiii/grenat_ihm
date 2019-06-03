@@ -18,7 +18,7 @@ public class VictoryScreen extends JPanel {
     *Initializes the components
     */
     public void initComponent() {
-      setLayout(new BorderLayout())
+      setLayout(new BorderLayout());
       this.img = new ImageIcon("../img/Coupe.png");
       JLabel background = new JLabel(this.img);
       this.button = new JButton("Retour a l'accueil");
