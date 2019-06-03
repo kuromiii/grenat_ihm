@@ -7,6 +7,13 @@ public class MainFrame extends JFrame {
   private TopBar topBar;
   private JPanel switchablePanel;
 
+  CalenderFrame calenderFrame;
+  ChecklistFrame checklistFrame;
+  MainMenuFrame mainMenuFrame;
+  MapFrame mapFrame;
+  SettingsFrame settingsFrame;
+  VehicleFrame vehicleFrame;
+
   /**
    * Create a MainFrame object.
    */
@@ -30,12 +37,30 @@ public class MainFrame extends JFrame {
   }
 
   private void initComponents() {
-    this.topBar = new TopBar();
-    //this.switchablePanel = new JPanel(new CardLayout());
-    this.switchablePanel = new MapFrame();
+    this.topBar = new TopBar(this);
+
+    this.calenderFrame = new CalenderFrame();
+    this.checklistFrame = new ChecklistFrame();
+    this.mainMenuFrame = new MainMenuFrame();
+    this.mapFrame = new MapFrame();
+    this.settingsFrame = new SettingsFrame();
+    this.vehicleFrame = new VehicleFrame();
+
+    this.switchablePanel = new JPanel(new CardLayout());
+
+    this.switchablePanel.add(this.calenderFrame);
+    this.switchablePanel.add(this.checklistFrame);
+    this.switchablePanel.add(this.mainMenuFrame);
+    this.switchablePanel.add(this.mapFrame);
+    this.switchablePanel.add(this.settingsFrame);
+    this.switchablePanel.add(this.vehicleFrame);
 
     this.add(this.topBar, BorderLayout.NORTH);
     this.add(this.switchablePanel, BorderLayout.CENTER);
+  }
+
+  public JPanel getSwitchablePanel() {
+    return this.switchablePanel;
   }
 
   public static void main(String args[]) {

@@ -4,37 +4,44 @@ import java.awt.*;
 import javax.swing.*;
 
 public class TopBar extends JPanel {
-  ImageIcon logo;
-  JButton Itineraire;
-  JButton Fonctionnel;
-  JButton Agenda;
-  JButton Parametres;
+  private MainFrame parent;
+
+  private ImageIcon logo;
+
+  private JButton itineraire, fonctionnel, agenda, parametres;
 
   private static final Color COLOR = new Color(173, 20, 87);
 
-  public TopBar() {
+  public TopBar(MainFrame parent) {
     try {
-			UIManager.setLookAndFeel (UIManager.getSystemLookAndFeelClassName());
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		}
 		catch (UnsupportedLookAndFeelException e) {
-			e.printStackTrace ();
+			e.printStackTrace();
 		}
     catch (ReflectiveOperationException e) {
-      e.printStackTrace ();
+      e.printStackTrace();
     }
 
+    if (parent != null) {
+      this.parent = parent;
+    }
 
+    initComponents();
+  }
+
+  public void initComponents() {
     this.logo = new ImageIcon("../img/LogoSmall.png");
-    this.Itineraire = new JButton("Itineraire");
-    this.Fonctionnel = new JButton("Fonctionnel");
-    this.Agenda = new JButton("Agenda");
-    this.Parametres = new JButton("Parametres");
+    this.itineraire = new JButton("Itineraire");
+    this.fonctionnel = new JButton("Fonctionnel");
+    this.agenda = new JButton("Agenda");
+    this.parametres = new JButton("Parametres");
 
     JPanel b = new JPanel();
-    b.add(this.Itineraire);
-    b.add(this.Fonctionnel);
-    b.add(this.Agenda);
-    b.add(this.Parametres);
+    b.add(this.itineraire);
+    b.add(this.fonctionnel);
+    b.add(this.agenda);
+    b.add(this.parametres);
     b.setBackground(COLOR);
 
     this.add(new JLabel(this.logo));
