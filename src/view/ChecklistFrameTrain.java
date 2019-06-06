@@ -4,7 +4,7 @@ import java.awt.*;
 import javax.swing.*;
 import java.util.ArrayList;
 
-public class ChecklistFrameTrain extends JPanel {
+public class ChecklistFrameTrain extends JPanel implements CheckboxInterface {
   private Checkbox ck1;
   private Checkbox ck2;
   private Checkbox ck3;
