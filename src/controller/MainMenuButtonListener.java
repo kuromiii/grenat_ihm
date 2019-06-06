@@ -19,11 +19,11 @@ public class MainMenuButtonListener implements ActionListener {
   }
 
   public void actionPerformed(ActionEvent ev) {
-    if (ev.getSource() == this.mainMenuF.getItineraireButton()) {
+    if (ev.getSource() == this.mainMenuF.getMapButton()) {
       this.mainF.getSwitchableCL().show(this.mainF.getSwitchablePanel(), "Map");
-    } else if (ev.getSource() == this.mainMenuF.getAgendaButton()) {
-      this.mainF.getSwitchableCL().show(this.mainF.getSwitchablePanel(), "Calender");
-    } else {
+    } else if (ev.getSource() == this.mainMenuF.getCalendarButton()) {
+      this.mainF.getSwitchableCL().show(this.mainF.getSwitchablePanel(), "Calendar");
+    } else if (ev.getSource() == this.mainMenuF.getVehicleButton()) {
       this.mainF.getSwitchableCL().show(this.mainF.getSwitchablePanel(), "Vehicle");
     }
   }

@@ -6,7 +6,7 @@ import javax.swing.*;
 public class SettingsFrame extends JPanel {
 
   public SettingsFrame() {
-    initComponents();
+    this.initComponents();
   }
 
   public void initComponents() {

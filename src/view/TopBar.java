@@ -8,46 +8,47 @@ import controller.*;
 public class TopBar extends JPanel {
   private MainFrame parent;
 
-  private JButton itineraire, transports, agenda, parametres, boutonLogo;
+  private JButton logoBtn, mapBtn, vehicleBtn, calendarBtn, settingsBtn;
 
   private static final Color COLOR = new Color(173, 20, 87);
 
   public TopBar(MainFrame parent) {
     if (parent != null) {
       this.parent = parent;
+      this.initComponents();
+    } else {
+      throw new NullPointerException();
     }
-
-    this.initComponents();
   }
 
   public void initComponents() {
     TopBarButtonListener topBarListener = new TopBarButtonListener(this, this.parent);
 
-    this.boutonLogo = new JButton();
-    this.boutonLogo.setIcon(new ImageIcon("../img/LogoSmall.png"));
-    this.boutonLogo.setOpaque(false);
-    this.boutonLogo.setContentAreaFilled(false);
-    this.boutonLogo.setBorderPainted(false);
-    this.boutonLogo.addActionListener(topBarListener);
+    this.logoBtn = new JButton();
+    this.logoBtn.setIcon(new ImageIcon("../img/LogoSmall.png"));
+    this.logoBtn.setOpaque(false);
+    this.logoBtn.setContentAreaFilled(false);
+    this.logoBtn.setBorderPainted(false);
+    this.logoBtn.addActionListener(topBarListener);
 
-    this.itineraire = new JButton("Itineraire");
-    this.itineraire.addActionListener(topBarListener);
+    this.mapBtn = new JButton("Itineraire");
+    this.mapBtn.addActionListener(topBarListener);
 
-    this.transports = new JButton("Transports");
-    this.transports.addActionListener(topBarListener);
+    this.vehicleBtn = new JButton("Transports");
+    this.vehicleBtn.addActionListener(topBarListener);
 
-    this.agenda = new JButton("Agenda");
-    this.agenda.addActionListener(topBarListener);
+    this.calendarBtn = new JButton("Agenda");
+    this.calendarBtn.addActionListener(topBarListener);
 
-    this.parametres = new JButton("Parametres");
-    this.parametres.addActionListener(topBarListener);
+    this.settingsBtn = new JButton("Parametres");
+    this.settingsBtn.addActionListener(topBarListener);
 
     JPanel b = new JPanel();
-    b.add(this.boutonLogo);
-    b.add(this.itineraire);
-    b.add(this.transports);
-    b.add(this.agenda);
-    b.add(this.parametres);
+    b.add(this.logoBtn);
+    b.add(this.mapBtn);
+    b.add(this.vehicleBtn);
+    b.add(this.calendarBtn);
+    b.add(this.settingsBtn);
     b.setBackground(COLOR);
 
     this.add(b);
@@ -55,22 +56,22 @@ public class TopBar extends JPanel {
   }
 
   public JButton getLogoButton() {
-    return this.boutonLogo;
+    return this.logoBtn;
   }
 
-  public JButton getItineraireButton() {
-    return this.itineraire;
+  public JButton getMapButton() {
+    return this.mapBtn;
   }
 
-  public JButton getTransportsButton() {
-    return this.transports;
+  public JButton getVehicleButton() {
+    return this.vehicleBtn;
   }
 
-  public JButton getAgendaButton() {
-    return this.agenda;
+  public JButton getCalendarButton() {
+    return this.calendarBtn;
   }
 
-  public JButton getParametresButton() {
-    return this.parametres;
+  public JButton getSettingsButton() {
+    return this.settingsBtn;
   }
 }

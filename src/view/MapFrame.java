@@ -12,7 +12,7 @@ public class MapFrame extends JPanel {
     *Creates a new MapFrame object
     */
     public MapFrame() {
-      initComponent();
+      this.initComponent();
     }
 
   /**

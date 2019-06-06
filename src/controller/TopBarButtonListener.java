@@ -20,13 +20,13 @@ public class TopBarButtonListener implements ActionListener {
 
   public void actionPerformed(ActionEvent ev) {
     if (ev.getSource() == this.topB.getLogoButton()) {
-      this.mainF.getSwitchableCL().show(this.mainF.getSwitchablePanel(), "Main Menu");      
+      this.mainF.getSwitchableCL().show(this.mainF.getSwitchablePanel(), "Main Menu");
     } else if (ev.getSource() == this.topB.getItineraireButton()) {
       this.mainF.getSwitchableCL().show(this.mainF.getSwitchablePanel(), "Map");
     } else if (ev.getSource() == this.topB.getTransportsButton()) {
       this.mainF.getSwitchableCL().show(this.mainF.getSwitchablePanel(), "Vehicle");
     } else if (ev.getSource() == this.topB.getAgendaButton()) {
-      this.mainF.getSwitchableCL().show(this.mainF.getSwitchablePanel(), "Calender");
+      this.mainF.getSwitchableCL().show(this.mainF.getSwitchablePanel(), "Calendar");
     } else if (ev.getSource() == this.topB.getParametresButton()) {
       this.mainF.getSwitchableCL().show(this.mainF.getSwitchablePanel(), "Settings");
     }
