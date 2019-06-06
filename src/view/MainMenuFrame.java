@@ -14,6 +14,7 @@ public class MainMenuFrame extends JPanel {
   private JButton boutonItineraireTexte;
   private JButton boutonAgendaTexte;
   private JButton boutonTransportTexte;
+  private final Color COLOR = new Color(0xFBE8E8);
 
   /**
     *Creates a new MainMenuFrame object
@@ -55,12 +56,12 @@ public class MainMenuFrame extends JPanel {
       Image newImg3 = img3.getScaledInstance(120,120,Image.SCALE_SMOOTH);
       boutonTransport.setIcon(new ImageIcon(newImg3));
 
-      this.boutonItineraire.setBackground(new Color(0xFBE8E8));
-      this.boutonAgenda.setBackground(new Color(0xFBE8E8));
-      this.boutonTransport.setBackground(new Color(0xFBE8E8));
-      this.boutonItineraireTexte.setBackground(new Color(0xFBE8E8));
-      this.boutonAgendaTexte.setBackground(new Color(0xFBE8E8));
-      this.boutonTransportTexte.setBackground(new Color(0xFBE8E8));
+      this.boutonItineraire.setBackground(this.COLOR);
+      this.boutonAgenda.setBackground(this.COLOR);
+      this.boutonTransport.setBackground(this.COLOR);
+      this.boutonItineraireTexte.setBackground(this.COLOR);
+      this.boutonAgendaTexte.setBackground(this.COLOR);
+      this.boutonTransportTexte.setBackground(this.COLOR);
 
       this.setLayout(new BorderLayout());
 
