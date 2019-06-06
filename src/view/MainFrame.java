@@ -7,6 +7,8 @@ public class MainFrame extends JFrame {
   private TopBar topBar;
   private JPanel switchablePanel;
 
+  private CardLayout switchableCL;
+
   CalenderFrame calenderFrame;
   ChecklistFrame checklistFrame;
   MainMenuFrame mainMenuFrame;
@@ -55,8 +57,8 @@ public class MainFrame extends JFrame {
     this.switchablePanel.add(this.settingsFrame, "Settings");
     this.switchablePanel.add(this.vehicleFrame, "Vehicle");
 
-    CardLayout cl = (CardLayout)(this.switchablePanel.getLayout());
-    cl.show(this.switchablePanel, "Vehicle");
+    this.switchableCL = (CardLayout)(this.switchablePanel.getLayout());
+    this.switchableCL.show(this.switchablePanel, "Vehicle");
 
     this.add(this.topBar, BorderLayout.NORTH);
     this.add(this.switchablePanel, BorderLayout.CENTER);
@@ -64,6 +66,11 @@ public class MainFrame extends JFrame {
 
   public JPanel getSwitchablePanel() {
     return this.switchablePanel;
+  }
+
+
+  public CardLayout getSwitchableCL() {
+    return this.switchableCL;
   }
 
   public static void main(String args[]) {
