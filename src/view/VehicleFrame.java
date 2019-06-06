@@ -10,6 +10,7 @@ public class VehicleFrame extends JPanel {
 
   private JButton boutonBus, boutonMetro, boutonTrain;
   private JButton boutonBusTexte, boutonMetroTexte, boutonTrainTexte;
+  private final Color COLOR = new Color(0xFBE8E8);
 
   /**
     *Creates a new VehicleFrame object
@@ -42,12 +43,12 @@ public class VehicleFrame extends JPanel {
       this.boutonMetroTexte.addActionListener(vehiListener);
       this.boutonTrainTexte.addActionListener(vehiListener);
 
-      this.boutonBus.setBackground(new Color(0xFBE8E8));
-      this.boutonBusTexte.setBackground(new Color(0xFBE8E8));
-      this.boutonMetro.setBackground(new Color(0xFBE8E8));
-      this.boutonMetroTexte.setBackground(new Color(0xFBE8E8));
-      this.boutonTrain.setBackground(new Color(0xFBE8E8));
-      this.boutonTrainTexte.setBackground(new Color(0xFBE8E8));
+      this.boutonBus.setBackground(this.COLOR);
+      this.boutonBusTexte.setBackground(this.COLOR);
+      this.boutonMetro.setBackground(this.COLOR);
+      this.boutonMetroTexte.setBackground(this.COLOR);
+      this.boutonTrain.setBackground(this.COLOR);
+      this.boutonTrainTexte.setBackground(this.COLOR);
 
 
 
