@@ -7,82 +7,41 @@ import java.util.ArrayList;
 import controller.CheckboxListener;
 
 public class ChecklistFrameTrain extends JPanel {
-  private Checkbox ck1;
-  private Checkbox ck2;
-  private Checkbox ck3;
-  private Checkbox ck4;
-  private Checkbox ck5;
-  private Checkbox ck6;
-  private Checkbox ck7;
+  ArrayList<Checkbox> chkList;
 
   public ChecklistFrameTrain() {
-    try {
-      UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-    }
-    catch (UnsupportedLookAndFeelException e) {
-      e.printStackTrace();
-    }
-    catch (ReflectiveOperationException e) {
-      e.printStackTrace();
-    }
-
-    initComponents();
+    this.chkList = new ArrayList<Checkbox>();
+    this.initComponents();
   }
 
   public void initComponents() {
-    ck1 = new Checkbox("Sortir le ticket du sac et le composter", false);
-    ck2 = new Checkbox("Rentrer dans le wagon correspondant au ticket", false);
-    ck3 = new Checkbox("Trouver sa place a l'aide du ticket", false);
-    ck4 = new Checkbox("Ranger ses bagages au dessus de sa place", false);
-    ck5 = new Checkbox("Si un controleur se presente, lui montrer son ticket", false);
-    ck6 = new Checkbox("Lorsque notre gare est annoncee: reprendre ses affaires et se diriger vers la sortie", false);
-    ck7 = new Checkbox("Sortir du train lorsque celui-ci est a l'arret et se rendre vers la sortie de la gare", false);
+    this.setLayout(new BorderLayout());
+    CheckboxListener chkListener = new CheckboxListener(this.getCheckBoxList());
 
-    ck2.setVisible(false);
-    ck3.setVisible(false);
-    ck4.setVisible(false);
-    ck5.setVisible(false);
-    ck6.setVisible(false);
-    ck7.setVisible(false);
-
-    ck1.setForeground(Color.RED);
-    ck2.setForeground(Color.RED);
-    ck3.setForeground(Color.RED);
-    ck4.setForeground(Color.RED);
-    ck5.setForeground(Color.RED);
-    ck6.setForeground(Color.RED);
-    ck7.setForeground(Color.RED);
-
-
-    setLayout(new BorderLayout());
     JPanel main = new JPanel(new GridLayout(7,1));
 
-    main.add(ck1);
-    main.add(ck2);
-    main.add(ck3);
-    main.add(ck4);
-    main.add(ck5);
-    main.add(ck6);
-    main.add(ck7);
+    this.chkList.add(new Checkbox("Sortir le ticket du sac et le composter", false));
+    this.chkList.add(new Checkbox("Rentrer dans le wagon correspondant au ticket", false));
+    this.chkList.add(new Checkbox("Trouver sa place a l'aide du ticket", false));
+    this.chkList.add(new Checkbox("Ranger ses bagages au dessus de sa place", false));
+    this.chkList.add(new Checkbox("Si un controleur se presente, lui montrer son ticket", false));
+    this.chkList.add(new Checkbox("Lorsque notre gare est annoncee: reprendre ses affaires et se diriger vers la sortie", false));
+    this.chkList.add(new Checkbox("Sortir du train lorsque celui-ci est a l'arret et se rendre vers la sortie de la gare", false));
 
-    add(main);
+    for (Checkbox chk : this.chkList) {
+      chk.setForeground(Color.RED);
+      chk.addItemListener(chkListener);
+      main.add(chk);
+    }
 
-//En fait on peut pas ajouter un ActionListener a un JPanel
-    this.addActionListener(new CheckboxListener(this.getListeCheckBox()));
+    for (int i = 1; i < this.chkList.size(); i++) {
+      chkList.get(i).setVisible(false);
+    }
+
+    this.add(main);
   }
 
-
-  public ArrayList<Checkbox> getListeCheckBox() {
-    ArrayList<Checkbox> ret = new ArrayList<Checkbox>();
-
-    ret.add(this.ck1);
-    ret.add(this.ck4);
-    ret.add(this.ck3);
-    ret.add(this.ck4);
-    ret.add(this.ck5);
-    ret.add(this.ck6);
-    ret.add(this.ck7);
-
-    return ret;
+  public ArrayList<Checkbox> getCheckBoxList() {
+    return this.chkList;
   }
 }

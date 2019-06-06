@@ -25,49 +25,57 @@ public class MainMenuFrame extends JPanel {
       }
     }
 
-  /**
-    *Initializes the components
-    */
+    /**
+     * Initializes components of the Panel.
+     */
     private void initComponent() {
+      this.setLayout(new BorderLayout());
       MainMenuButtonListener mainMenuListener = new MainMenuButtonListener(this.parent, this);
 
+      // Map Image
       Image mapImg = (new ImageIcon("../img/Itineraire.png")).getImage();
       Image rescaledMapImg = mapImg.getScaledInstance(120,120,Image.SCALE_SMOOTH);
 
+      // Calendar Image
       Image calendarImg = (new ImageIcon("../img/Agenda.png")).getImage();
       Image rescaledCalendarImg = calendarImg.getScaledInstance(120,120,Image.SCALE_SMOOTH);
 
+      // Vehicle Image
       Image vehicleImg = (new ImageIcon("../img/Transport.png")).getImage();
       Image rescaledVehicleImg = vehicleImg.getScaledInstance(120,120,Image.SCALE_SMOOTH);
 
+      // Map Button
       this.mapBtn = new JButton();
       this.mapBtn.setBackground(this.BUTTON_COLOR);
-      this.mapBtn.setIcon(new ImageIcon(mapImg));
+      this.mapBtn.setIcon(new ImageIcon(rescaledMapImg));
       this.mapBtn.addActionListener(mainMenuListener);
 
+      // Calendar Button
       this.calendarBtn = new JButton();
       this.calendarBtn.setBackground(this.BUTTON_COLOR);
-      this.calendarBtn.setIcon(new ImageIcon(calendarImg));
+      this.calendarBtn.setIcon(new ImageIcon(rescaledCalendarImg));
       this.calendarBtn.addActionListener(mainMenuListener);
 
+      // Vehicle Button
       this.vehicleBtn = new JButton();
       this.vehicleBtn.setBackground(this.BUTTON_COLOR);
-      this.vehicleBtn.setIcon(new ImageIcon(vehicleImg));
+      this.vehicleBtn.setIcon(new ImageIcon(rescaledVehicleImg));
       this.vehicleBtn.addActionListener(mainMenuListener);
 
+      // Map Text Button
       this.mapTextBtn = new JButton("Itineraire");
       this.mapTextBtn.setBackground(this.BUTTON_COLOR);
       this.mapTextBtn.addActionListener(mainMenuListener);
 
+      // Calendar Text Button
       this.calendarTextBtn = new JButton ("Agenda");
       this.calendarTextBtn.setBackground(this.BUTTON_COLOR);
       this.calendarTextBtn.addActionListener(mainMenuListener);
 
+      // Vehicle Text Button
       this.vehicleTextBtn = new JButton("Transports");
       this.vehicleTextBtn.setBackground(this.BUTTON_COLOR);
       this.vehicleTextBtn.addActionListener(mainMenuListener);
-
-      this.setLayout(new BorderLayout());
 
       JPanel centralPanel = new JPanel(new GridLayout(1,5));
 

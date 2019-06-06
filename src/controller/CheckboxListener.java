@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 import view.*;
 
-public class CheckboxListener implements ActionListener {
+public class CheckboxListener implements ItemListener {
 
   private ArrayList<Checkbox> list;
 
@@ -23,7 +23,7 @@ public class CheckboxListener implements ActionListener {
     }
   }
 
-  public void actionPerformed (ActionEvent e) {
+  public void itemStateChanged(ItemEvent e) {
     Checkbox self = ((Checkbox)e.getSource());
     self.setEnabled(false);
     self.setForeground(Color.GREEN);

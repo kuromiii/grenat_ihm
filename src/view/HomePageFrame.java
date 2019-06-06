@@ -19,14 +19,12 @@ public class HomePageFrame extends JPanel {
     }
   }
 
-
   public void initComponents() {
-    this.logoBtn = new JButton();
-
     Image logo = (new ImageIcon("../img/Logo.png")).getImage();
-    Image newLogo = logo.getScaledInstance(500, 500, Image.SCALE_SMOOTH);
-    this.logoBtn.setIcon(new ImageIcon(newLogo));
+    Image rescaledLogo = logo.getScaledInstance(500, 500, Image.SCALE_SMOOTH);
 
+    this.logoBtn = new JButton();
+    this.logoBtn.setIcon(new ImageIcon(rescaledLogo));
     this.logoBtn.setOpaque(false);
     this.logoBtn.setContentAreaFilled(false);
     this.logoBtn.setBorderPainted(false);

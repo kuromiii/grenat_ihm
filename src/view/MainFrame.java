@@ -4,12 +4,14 @@ import javax.swing.*;
 import java.awt.*;
 
 public class MainFrame extends JFrame {
+  // Top bar
   private TopBar topBar;
 
+  // The switchable panel
   private JPanel switchablePanel;
   private CardLayout switchableCL;
 
-  // Different panels of the application, needs to be loaded here
+  // Different panels of the application
   CalenderFrame calenderFrame;
   MainMenuFrame mainMenuFrame;
   MapFrame mapFrame;
@@ -21,16 +23,17 @@ public class MainFrame extends JFrame {
   HomePageFrame homePage;
 
   /**
-   * Create a MainFrame object.
+   * MainFrame constructor.
    */
   public MainFrame() {
     super("Grenat");
 
-    // Set logo
+    // Set the application's logo
     this.setIconImage(new ImageIcon(("../img/Logo.png")).getImage());
 
     this.getContentPane().setLayout(new BorderLayout());
 
+    // Exit the whole application on closing the frame
     this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
     // Initialize components
@@ -38,13 +41,19 @@ public class MainFrame extends JFrame {
 
     // Adjust size
     this.pack();
+    this.setResizable(false);
+    this.setSize(1024, 650);
 
     this.setVisible(true);
   }
 
+  /**
+   * Initializes every component.
+   */
   private void initComponents() {
     this.topBar = new TopBar(this);
 
+    // Different panels of the application, needs to be loaded here
     this.mainMenuFrame = new MainMenuFrame(this);
     this.calenderFrame = new CalenderFrame();
     this.mapFrame = new MapFrame();
@@ -57,6 +66,7 @@ public class MainFrame extends JFrame {
 
     this.switchablePanel = new JPanel(new CardLayout());
 
+    // Then we need to add the different panels to the switchable panel's list
     this.switchablePanel.add(this.mainMenuFrame, "Main Menu");
     this.switchablePanel.add(this.calenderFrame, "Calendar");
     this.switchablePanel.add(this.mapFrame, "Map");
@@ -72,14 +82,20 @@ public class MainFrame extends JFrame {
 
     this.add(this.topBar, BorderLayout.NORTH);
     this.add(this.switchablePanel, BorderLayout.CENTER);
-    this.setResizable(false);
   }
 
+  /**
+   * Returns the switchable panel.
+   * @return the switchable panel
+   */
   public JPanel getSwitchablePanel() {
     return this.switchablePanel;
   }
 
-
+  /**
+   * Returns the switchable panel's CardLayout, needed to actually change the panels.
+   * @return the switchable panel's CardLayout
+   */
   public CardLayout getSwitchableCL() {
     return this.switchableCL;
   }

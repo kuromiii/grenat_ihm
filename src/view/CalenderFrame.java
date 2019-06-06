@@ -22,7 +22,7 @@ public class CalenderFrame extends JPanel {
   private static final Color CAR_COLOR = new Color(247, 146, 181);
 
   public CalenderFrame() {
-    initComponents();
+    this.initComponents();
   }
 
   public void initComponents() {
@@ -38,6 +38,7 @@ public class CalenderFrame extends JPanel {
 
     JPanel up = new JPanel (new GridLayout(1,8));
     up.add(new JPanel());
+
     String[] dayName = {"Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi","Dimanche"};
     TimeZone timeZone = TimeZone.getTimeZone("Europe/Paris");
     SimpleDateFormat dayFormat = new SimpleDateFormat("dd-MM-yyyy");
