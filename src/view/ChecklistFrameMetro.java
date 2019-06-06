@@ -53,6 +53,8 @@ public class ChecklistFrameMetro extends JPanel {
     main.add(ck5);
 
     add(main);
+
+    this.setActrionListener(new CheckboxListener(this.getListeCheckBox()));
   }
 
 
