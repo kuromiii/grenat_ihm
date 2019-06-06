@@ -24,7 +24,7 @@ public class MapFrame extends JPanel {
       this.adresseDepartField = new JTextField("Adresse de depart");
       this.adresseArriveField = new JTextField("Adresse d'arrivee");
 
-      JTextArea hack = new JTextArea("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+      JTextArea hack = new JTextArea("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
       hack.setEditable(false);
 
       JPanel upperLeft = new JPanel(new BorderLayout());
@@ -42,9 +42,8 @@ public class MapFrame extends JPanel {
 
       upperLeft.add(itineraire,BorderLayout.NORTH);
       upperLeft.add(hack,BorderLayout.SOUTH);
+      
       add(upperLeft, BorderLayout.WEST);
-    //  Image originalImage = (new ImageIcon("../img/map.png")).getImage();
-    //  Image scaledImage = originalImage.getScaledInstance(center.getWidth(),center.getHeight(),Image.SCALE_SMOOTH);
       add(new JLabel(new ImageIcon("../img/map.png")),BorderLayout.CENTER);
     }
 
