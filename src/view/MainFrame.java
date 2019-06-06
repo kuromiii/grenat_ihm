@@ -50,15 +50,15 @@ public class MainFrame extends JFrame {
 
     this.switchablePanel = new JPanel(new CardLayout());
 
+    this.switchablePanel.add(this.mainMenuFrame, "Main Menu");
     this.switchablePanel.add(this.calenderFrame, "Calender");
     this.switchablePanel.add(this.checklistFrame, "Checklist");
-    this.switchablePanel.add(this.mainMenuFrame, "Main Menu");
     this.switchablePanel.add(this.mapFrame, "Map");
     this.switchablePanel.add(this.settingsFrame, "Settings");
     this.switchablePanel.add(this.vehicleFrame, "Vehicle");
 
     this.switchableCL = (CardLayout)(this.switchablePanel.getLayout());
-    this.switchableCL.show(this.switchablePanel, "Vehicle");
+    this.switchableCL.show(this.switchablePanel, "Main Menu");
 
     this.add(this.topBar, BorderLayout.NORTH);
     this.add(this.switchablePanel, BorderLayout.CENTER);
