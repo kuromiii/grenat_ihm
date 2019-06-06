@@ -24,6 +24,7 @@ public class MainFrame extends JFrame {
 
   /**
    * MainFrame constructor.
+   * Set the Frame title, the icon, then initializes the components.
    */
   public MainFrame() {
     super("Grenat");
@@ -48,7 +49,7 @@ public class MainFrame extends JFrame {
   }
 
   /**
-   * Initializes every component.
+   * Initializes components of the Panel.
    */
   private void initComponents() {
     this.topBar = new TopBar(this);
@@ -98,13 +99,5 @@ public class MainFrame extends JFrame {
    */
   public CardLayout getSwitchableCL() {
     return this.switchableCL;
-  }
-
-  public static void main(String args[]) {
-    java.awt.EventQueue.invokeLater(new Runnable() {
-      public void run() {
-        MainFrame gui = new MainFrame();
-      }
-    });
   }
 }

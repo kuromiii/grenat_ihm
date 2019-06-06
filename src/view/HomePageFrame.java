@@ -6,10 +6,16 @@ import javax.swing.*;
 import controller.*;
 
 public class HomePageFrame extends JPanel {
+  // The parent frame
   private MainFrame parent;
 
+  // The logo JButton
   private JButton logoBtn;
 
+  /**
+   * HomePageFrame constructor.
+   * @param parent the parent frame, needed by the HomePageButtonListener
+   */
   public HomePageFrame(MainFrame parent) {
     if (parent != null) {
       this.parent = parent;
@@ -19,6 +25,9 @@ public class HomePageFrame extends JPanel {
     }
   }
 
+  /**
+   * Initializes components of the Panel.
+   */
   public void initComponents() {
     Image logo = (new ImageIcon("../img/Logo.png")).getImage();
     Image rescaledLogo = logo.getScaledInstance(500, 500, Image.SCALE_SMOOTH);
@@ -32,9 +41,12 @@ public class HomePageFrame extends JPanel {
 
     this.setLayout(new BorderLayout());
     this.add(logoBtn);
-
   }
 
+  /**
+   * Returns the logo JButton.
+   * @return the logo JButton
+   */
   public JButton getLogoButton() {
     return this.logoBtn;
   }

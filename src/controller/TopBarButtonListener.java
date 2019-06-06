@@ -6,9 +6,17 @@ import java.awt.event.*;
 import view.*;
 
 public class TopBarButtonListener implements ActionListener {
+  // The top bar, containing the buttons
   private TopBar topB;
+  // The main frame, containing the switchable panel
   private MainFrame mainF;
 
+  /**
+   * TopBarButtonListener constructor.
+   * Checks if given parameters are valid, and throws an exception otherwise
+   * @param topB  the top bar, containing the buttons
+   * @param mainF the main frame, containing the switchable panel
+   */
   public TopBarButtonListener(TopBar topB, MainFrame mainF) {
     if (topB != null && mainF != null) {
       this.topB = topB;
@@ -18,6 +26,11 @@ public class TopBarButtonListener implements ActionListener {
     }
   }
 
+  /**
+   * Called when a button is clicked.
+   * We switch the panel to a new one, depending on the button.
+   * @param ev the action event
+   */
   public void actionPerformed(ActionEvent ev) {
     if (ev.getSource() == this.topB.getLogoButton()) {
       this.mainF.getSwitchableCL().show(this.mainF.getSwitchablePanel(), "Main Menu");

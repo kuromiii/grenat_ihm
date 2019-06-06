@@ -8,14 +8,17 @@ public class MainMenuFrame extends JPanel {
 
   private MainFrame parent;
 
+  // Buttons with images
   private JButton mapBtn, calendarBtn, vehicleBtn;
+  // Buttons with text
   private JButton mapTextBtn, calendarTextBtn, vehicleTextBtn;
 
   private final Color BUTTON_COLOR = new Color(251, 232, 232);
 
-  /**
-    *Creates a new MainMenuFrame object
-    */
+    /**
+     * MainMenuFrame constructor.
+     * @param parent the parent frame, needed by the MainMenuButtonListener
+     */
     public MainMenuFrame(MainFrame parent) {
       if (parent != null) {
         this.parent = parent;
@@ -118,14 +121,26 @@ public class MainMenuFrame extends JPanel {
       add(centralContainer,BorderLayout.CENTER);
     }
 
+    /**
+     * Returns the map JButton.
+     * @return the map JButton
+     */
     public JButton getMapButton() {
       return this.mapBtn;
     }
 
+    /**
+     * Returns the calendar JButton.
+     * @return the calendar JButton
+     */
     public JButton getCalendarButton() {
       return this.calendarBtn;
     }
 
+    /**
+     * Returns the vehicle JButton.
+     * @return the vehicle JButton
+     */
     public JButton getVehicleButton() {
       return this.vehicleBtn;
     }

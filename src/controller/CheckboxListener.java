@@ -8,30 +8,30 @@ import java.util.ArrayList;
 import view.*;
 
 public class CheckboxListener implements ItemListener {
-
+  // An ArrayList containing the Checkboxes
   private ArrayList<Checkbox> list;
 
-  public CheckboxListener (ArrayList<Checkbox> list) {
-    try {
-      if (list == null) {
-        throw new Exception("Erreur du constructeur CheckboxListener(), parametre null");
-      }
+  public CheckboxListener(ArrayList<Checkbox> list) {
+    if (list != null) {
       this.list = list;
-    }
-    catch (Exception e) {
-      System.out.println(e.getMessage());
+    } else {
+      throw new NullPointerException();
     }
   }
 
+  /**
+   * Whenever a Checkbox gets checked, show the next one.
+   * @param e the event
+   */
   public void itemStateChanged(ItemEvent e) {
     Checkbox self = ((Checkbox)e.getSource());
+
     self.setEnabled(false);
     self.setForeground(Color.GREEN);
+
     int cursor = this.list.indexOf(self) + 1;
     if (cursor < this.list.size()) {
       this.list.get(cursor).setVisible(true);
-    }
-    else {
     }
   }
 }
