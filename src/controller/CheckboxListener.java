@@ -11,6 +11,11 @@ public class CheckboxListener implements ItemListener {
   // An ArrayList containing the Checkboxes
   private ArrayList<Checkbox> list;
 
+  /**
+   * CheckboxListener constructor.
+   * Checks if the given ArrayList list is valid, throws an error otherwise.
+   * @param list the ArrayList containing checkboxes
+   */
   public CheckboxListener(ArrayList<Checkbox> list) {
     if (list != null) {
       this.list = list;

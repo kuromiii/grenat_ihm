@@ -12,11 +12,12 @@ public class MainMenuFrame extends JPanel {
   private JButton mapBtn, calendarBtn, vehicleBtn;
   // Buttons with text
   private JButton mapTextBtn, calendarTextBtn, vehicleTextBtn;
-
+  // Color of buttons
   private final Color BUTTON_COLOR = new Color(251, 232, 232);
 
     /**
      * MainMenuFrame constructor.
+     * Checks if the given parent is valid, throws an error otherwise.
      * @param parent the parent frame, needed by the MainMenuButtonListener
      */
     public MainMenuFrame(MainFrame parent) {

@@ -20,7 +20,7 @@ public class ChecklistFrameTrain extends JPanel {
   }
 
   /**
-   * Initializes the components.
+   * Initializes components of the Panel.
    */
   public void initComponents() {
     this.setLayout(new BorderLayout());

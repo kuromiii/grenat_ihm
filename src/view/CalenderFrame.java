@@ -16,6 +16,7 @@ public class CalenderFrame extends JPanel {
   private JPanel calendrier;
   private GregorianCalendar cal;
 
+  // Colors of calendar entries, depending on the type of transport
   private static final Color TRAIN_COLOR = new Color(240, 59, 105);
   private static final Color BUS_COLOR = new Color(244, 122, 84);
   private static final Color METRO_COLOR = new Color(243, 94, 152);
@@ -25,6 +26,9 @@ public class CalenderFrame extends JPanel {
     this.initComponents();
   }
 
+  /**
+   * Initializes components of the Panel.
+   */
   public void initComponents() {
     addTrajet = new JButton("Ajouter un trajet");
     calendrier = new JPanel(new GridLayout(11,8));

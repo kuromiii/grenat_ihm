@@ -8,14 +8,18 @@ import controller.*;
 public class VehicleFrame extends JPanel {
   private MainFrame parent;
 
+  // Buttons with images
   private JButton busBtn, metroBtn, trainBtn;
+  // Buttons with text
   private JButton busTextBtn, metroTextBtn, trainTextBtn;
-  
+  // Color of buttons
   private final Color BUTTON_COLOR = new Color(251, 232, 232);
 
-  /**
-    *Creates a new VehicleFrame object
-    */
+    /**
+     * VehicleFrame constructor.
+     * Checks if the given parent is valid, throws an error otherwise.
+     * @param parent the parent frame, needed by the MainMenuButtonListener
+     */
     public VehicleFrame(MainFrame parent) {
       if (parent != null) {
         this.parent = parent;
@@ -25,49 +29,57 @@ public class VehicleFrame extends JPanel {
       }
     }
 
-  /**
-    *Initializes the components
-    */
+    /**
+     * Initializes components of the Panel.
+     */
     private void initComponent() {
+      this.setLayout(new BorderLayout());
       VehicleButtonListener vehiListener = new VehicleButtonListener(this.parent, this);
 
+      // Bus image
       Image busImg = (new ImageIcon("../img/Bus.png")).getImage();
       Image rescaledBusImg = busImg.getScaledInstance(120,120,Image.SCALE_SMOOTH);
 
+      // Metro image
       Image metroImg = (new ImageIcon("../img/Metro.png")).getImage();
       Image rescaledMetroImg = metroImg.getScaledInstance(120,120,Image.SCALE_SMOOTH);
 
+      // Train image
       Image trainImg = (new ImageIcon("../img/Train.png")).getImage();
       Image rescaledTrainImg = trainImg.getScaledInstance(120,120,Image.SCALE_SMOOTH);
 
+      // Bus button
       this.busBtn = new JButton();
       this.busBtn.setBackground(this.BUTTON_COLOR);
       this.busBtn.addActionListener(vehiListener);
       this.busBtn.setIcon(new ImageIcon(rescaledBusImg));
 
+      // Metro Button
       this.metroBtn = new JButton();
       this.metroBtn.setBackground(this.BUTTON_COLOR);
       this.metroBtn.addActionListener(vehiListener);
       this.metroBtn.setIcon(new ImageIcon(rescaledMetroImg));
 
+      // Train Button
       this.trainBtn = new JButton();
       this.trainBtn.setBackground(this.BUTTON_COLOR);
       this.trainBtn.addActionListener(vehiListener);
       this.trainBtn.setIcon(new ImageIcon(rescaledTrainImg));
 
+      // Bus Text Button
       this.busTextBtn = new JButton("Bus");
       this.busTextBtn.setBackground(this.BUTTON_COLOR);
       this.busTextBtn.addActionListener(vehiListener);
 
+      // Metro Text Button
       this.metroTextBtn = new JButton ("Metro");
       this.metroTextBtn.setBackground(this.BUTTON_COLOR);
       this.metroTextBtn.addActionListener(vehiListener);
 
+      // Train Text Button
       this.trainTextBtn = new JButton("Train");
       this.trainTextBtn.setBackground(this.BUTTON_COLOR);
       this.trainTextBtn.addActionListener(vehiListener);
-
-      this.setLayout(new BorderLayout());
 
       JPanel centralPanel = new JPanel(new GridLayout(1,5));
       JPanel bus = new JPanel(new BorderLayout());
@@ -109,14 +121,26 @@ public class VehicleFrame extends JPanel {
       add(centralContainer,BorderLayout.CENTER);
     }
 
+    /**
+     * Returns the bus JButton.
+     * @return the bus JButton
+     */
     public JButton getBusButton() {
       return this.busBtn;
     }
 
+    /**
+     * Returns the metro JButton.
+     * @return the metro JButton
+     */
     public JButton getMetroButton() {
       return this.metroBtn;
     }
 
+    /**
+     * Retrusn the train JButton.
+     * @return the train JButton
+     */
     public JButton getTrainButton() {
       return this.trainBtn;
     }
