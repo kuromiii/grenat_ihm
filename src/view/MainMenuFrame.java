@@ -55,12 +55,12 @@ public class MainMenuFrame extends JPanel {
       Image newImg3 = img3.getScaledInstance(120,120,Image.SCALE_SMOOTH);
       boutonTransport.setIcon(new ImageIcon(newImg3));
 
-      boutonItineraire.setBackground(new Color(0xF03B69));
-      boutonAgenda.setBackground(new Color(0xF03B69));
-      boutonTransport.setBackground(new Color(0xF03B69));
-      boutonItineraireTexte.setBackground(new Color(0xF03B69));
-      boutonAgendaTexte.setBackground(new Color(0xF03B69));
-      boutonTransportTexte.setBackground(new Color(0xF03B69));
+      boutonItineraire.setBackground(new Color(0xFBE8E8));
+      boutonAgenda.setBackground(new Color(0xFBE8E8));
+      boutonTransport.setBackground(new Color(0xFBE8E8));
+      boutonItineraireTexte.setBackground(new Color(0xFBE8E8));
+      boutonAgendaTexte.setBackground(new Color(0xFBE8E8));
+      boutonTransportTexte.setBackground(new Color(0xFBE8E8));
 
       this.setLayout(new BorderLayout());
 
