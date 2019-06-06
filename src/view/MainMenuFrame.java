@@ -2,7 +2,11 @@ package view;
 import java.awt.*;
 import javax.swing.*;
 
+import controller.*;
+
 public class MainMenuFrame extends JPanel {
+
+  private MainFrame parent;
 
   private JButton boutonItineraire;
   private JButton boutonAgenda;
@@ -14,21 +18,28 @@ public class MainMenuFrame extends JPanel {
   /**
     *Creates a new MainMenuFrame object
     */
-    public MainMenuFrame() {
-      initComponent();
+    public MainMenuFrame(MainFrame parent) {
+      if (parent != null) {
+        this.parent = parent;
+        initComponent();
+      }
     }
 
   /**
     *Initializes the components
     */
     private void initComponent() {
+      MainMenuButtonListener mainMenuListener = new MainMenuButtonListener(this.parent, this);
+
       boutonItineraire = new JButton();
+      boutonItineraire.addActionListener(mainMenuListener);
       boutonAgenda = new JButton();
+      boutonAgenda.addActionListener(mainMenuListener);
       boutonTransport = new JButton();
+      boutonTransport.addActionListener(mainMenuListener);
       boutonItineraireTexte = new JButton("Itineraire");
       boutonAgendaTexte = new JButton ("Agenda");
       boutonTransportTexte = new JButton("Transports");
-
 
       Image img = (new ImageIcon("../img/Itineraire.png")).getImage();
       Image newImg = img.getScaledInstance(120,120,Image.SCALE_SMOOTH);
@@ -40,9 +51,7 @@ public class MainMenuFrame extends JPanel {
       Image newImg3 = img3.getScaledInstance(120,120,Image.SCALE_SMOOTH);
       boutonTransport.setIcon(new ImageIcon(newImg3));
 
-
-
-      setLayout(new BorderLayout());
+      this.setLayout(new BorderLayout());
 
       JPanel centralPanel = new JPanel(new GridLayout(1,5));
       JPanel itineraire = new JPanel(new BorderLayout());
@@ -81,5 +90,17 @@ public class MainMenuFrame extends JPanel {
       centralContainer.add(new JLabel(" "),BorderLayout.EAST);
       centralContainer.add(centralPanel,BorderLayout.CENTER);
       add(centralContainer,BorderLayout.CENTER);
+    }
+
+    public JButton getItineraireButton() {
+      return this.boutonItineraire;
+    }
+
+    public JButton getAgendaButton() {
+      return this.boutonAgenda;
+    }
+
+    public JButton getTransportButton() {
+      return this.boutonTransport;
     }
 }

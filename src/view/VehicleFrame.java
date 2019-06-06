@@ -1,53 +1,59 @@
 package view;
+
 import java.awt.*;
 import javax.swing.*;
 
-public class VehicleFrame extends JPanel {
+import controller.*;
 
-  private JButton boutonBus;
-  private JButton boutonMetro;
-  private JButton boutonTrain;
-  private JButton boutonBusTexte;
-  private JButton boutonMetroTexte;
-  private JButton boutonTrainTexte;
+public class VehicleFrame extends JPanel {
+  private MainFrame parent;
+
+  private JButton boutonBus, boutonMetro, boutonTrain;
+  private JButton boutonBusTexte, boutonMetroTexte, boutonTrainTexte;
 
   /**
     *Creates a new VehicleFrame object
     */
-    public VehicleFrame() {
-      initComponent();
+    public VehicleFrame(MainFrame parent) {
+      if (parent != null) {
+        this.parent = parent;
+        initComponent();
+      }
     }
 
   /**
     *Initializes the components
     */
     private void initComponent() {
-      boutonBus = new JButton();
-      boutonMetro = new JButton();
-      boutonTrain = new JButton();
-      boutonBusTexte = new JButton("Bus");
-      boutonMetroTexte = new JButton ("Metro");
-      boutonTrainTexte = new JButton("Train");
+      VehicleButtonListener vehiListener = new VehicleButtonListener(this.parent, this);
 
+      this.boutonBus = new JButton();
+      this.boutonBus.addActionListener(vehiListener);
+      this.boutonMetro = new JButton();
+      this.boutonMetro.addActionListener(vehiListener);
+      this.boutonTrain = new JButton();
+      this.boutonTrain.addActionListener(vehiListener);
+
+      this.boutonBusTexte = new JButton("Bus");
+      this.boutonMetroTexte = new JButton ("Metro");
+      this.boutonTrainTexte = new JButton("Train");
 
       Image img = (new ImageIcon("../img/Bus.png")).getImage();
       Image newImg = img.getScaledInstance(120,120,Image.SCALE_SMOOTH);
-      boutonBus.setIcon(new ImageIcon(newImg));
+      this.boutonBus.setIcon(new ImageIcon(newImg));
       Image img2 = (new ImageIcon("../img/Metro.png")).getImage();
       Image newImg2 = img2.getScaledInstance(120,120,Image.SCALE_SMOOTH);
-      boutonMetro.setIcon(new ImageIcon(newImg2));
+      this.boutonMetro.setIcon(new ImageIcon(newImg2));
       Image img3 = (new ImageIcon("../img/Train.png")).getImage();
       Image newImg3 = img3.getScaledInstance(120,120,Image.SCALE_SMOOTH);
-      boutonTrain.setIcon(new ImageIcon(newImg3));
+      this.boutonTrain.setIcon(new ImageIcon(newImg3));
 
-
-
-      setLayout(new BorderLayout());
+      this.setLayout(new BorderLayout());
 
       JPanel centralPanel = new JPanel(new GridLayout(1,5));
       JPanel bus = new JPanel(new BorderLayout());
-      bus.add(boutonBus,BorderLayout.CENTER);
-      bus.add(boutonBusTexte,BorderLayout.SOUTH);
+      bus.add(this.boutonBus,BorderLayout.CENTER);
+      bus.add(this.boutonBusTexte,BorderLayout.SOUTH);
 
       JPanel busContainer = new JPanel(new GridLayout(3,1));
       busContainer.add(new JPanel());
@@ -57,8 +63,9 @@ public class VehicleFrame extends JPanel {
       centralPanel.add(new JLabel(""));
 
       JPanel metro = new JPanel(new BorderLayout());
-      metro.add(boutonMetro,BorderLayout.CENTER);
-      metro.add(boutonMetroTexte,BorderLayout.SOUTH);
+      metro.add(this.boutonMetro,BorderLayout.CENTER);
+      metro.add(this.boutonMetroTexte,BorderLayout.SOUTH);
+
       JPanel metroContainer = new JPanel(new GridLayout(3,1));
       metroContainer.add(new JPanel());
       metroContainer.add(metro);
@@ -67,8 +74,8 @@ public class VehicleFrame extends JPanel {
       centralPanel.add(new JLabel(""));
 
       JPanel train = new JPanel (new BorderLayout());
-      train.add(boutonTrain,BorderLayout.CENTER);
-      train.add(boutonTrainTexte,BorderLayout.SOUTH);
+      train.add(this.boutonTrain,BorderLayout.CENTER);
+      train.add(this.boutonTrainTexte,BorderLayout.SOUTH);
 
       JPanel trainContainer = new JPanel(new GridLayout(3,1));
       trainContainer.add(new JPanel());
@@ -81,5 +88,17 @@ public class VehicleFrame extends JPanel {
       centralContainer.add(new JLabel(" "),BorderLayout.EAST);
       centralContainer.add(centralPanel,BorderLayout.CENTER);
       add(centralContainer,BorderLayout.CENTER);
+    }
+
+    public JButton getBusButton() {
+      return this.boutonBus;
+    }
+
+    public JButton getMetroButton() {
+      return this.boutonMetro;
+    }
+
+    public JButton getTrainButton() {
+      return this.boutonTrain;
     }
 }

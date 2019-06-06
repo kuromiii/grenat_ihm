@@ -24,7 +24,7 @@ public class TopBarButtonListener implements ActionListener {
     } else if (ev.getSource() == this.topB.getTransportsButton()) {
       this.mainF.getSwitchableCL().show(this.mainF.getSwitchablePanel(), "Vehicle");
     } else if (ev.getSource() == this.topB.getAgendaButton()) {
-      this.mainF.getSwitchableCL().show(this.mainF.getSwitchablePanel(), "Calendar");
+      this.mainF.getSwitchableCL().show(this.mainF.getSwitchablePanel(), "Calender");
     } else {
       this.mainF.getSwitchableCL().show(this.mainF.getSwitchablePanel(), "Settings");
     }

@@ -19,6 +19,12 @@ public class VehicleButtonListener implements ActionListener {
   }
 
   public void actionPerformed(ActionEvent ev) {
-
+    if (ev.getSource() == this.vehiF.getBusButton()) {
+      this.mainF.getSwitchableCL().show(this.mainF.getSwitchablePanel(), "Bus");
+    } else if (ev.getSource() == this.vehiF.getMetroButton()) {
+      this.mainF.getSwitchableCL().show(this.mainF.getSwitchablePanel(), "Metro");
+    } else {
+      this.mainF.getSwitchableCL().show(this.mainF.getSwitchablePanel(), "Train");
+    }
   }
 }
