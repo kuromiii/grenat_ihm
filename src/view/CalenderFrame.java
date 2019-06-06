@@ -5,6 +5,9 @@ import javax.swing.*;
 
 public class CalenderFrame extends JPanel {
 
+  private JButton addTrajet;
+  private JPanel Calendar;
+
   public CalenderFrame() {
     try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -20,6 +23,7 @@ public class CalenderFrame extends JPanel {
   }
 
   public void initComponents() {
+    addTrajet = new JButton("Ajouter un trajet");
 
   }
 }
