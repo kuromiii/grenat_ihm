@@ -2,6 +2,7 @@ package view;
 
 import java.awt.*;
 import javax.swing.*;
+import java.util.ArrayList;
 
 public class ChecklistFrameBus extends JPanel {
   private Checkbox ck1;
@@ -47,5 +48,16 @@ public class ChecklistFrameBus extends JPanel {
     main.add(ck4);
 
     add(main);
+  }
+
+  public ArrayList<CheckBox> getListeCheckBox() {
+    ArrayList<CheckBox> ret = new ArrayList<CheckBox>();
+
+    ret.add(this.ck1);
+    ret.add(this.ck4);
+    ret.add(this.ck3);
+    ret.add(this.ck4);
+
+    return ret;
   }
 }
