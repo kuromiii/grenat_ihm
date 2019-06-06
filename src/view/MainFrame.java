@@ -44,9 +44,9 @@ public class MainFrame extends JFrame {
   private void initComponents() {
     this.topBar = new TopBar(this);
 
+    this.mainMenuFrame = new MainMenuFrame();
     this.calenderFrame = new CalenderFrame();
     this.checklistFrame = new ChecklistFrame();
-    this.mainMenuFrame = new MainMenuFrame();
     this.mapFrame = new MapFrame();
     this.settingsFrame = new SettingsFrame();
     this.vehicleFrame = new VehicleFrame();

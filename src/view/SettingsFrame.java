@@ -26,7 +26,7 @@ public class SettingsFrame extends JPanel {
      "Utilisation de la batterie", "Utilisation du reseau"};
     JList<String> list = new JList<String>(settings);
     main.add(list, BorderLayout.NORTH);
-    
+
     this.add(new JPanel(new CardLayout()), BorderLayout.CENTER);
     this.add(main);
   }

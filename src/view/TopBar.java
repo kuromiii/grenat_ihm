@@ -35,14 +35,17 @@ public class TopBar extends JPanel {
   public void initComponents() {
     TopBarButtonListener topBarListener = new TopBarButtonListener(this, this.parent);
 
-
     this.logo = new ImageIcon("../img/LogoSmall.png");
+
     this.itineraire = new JButton("Itineraire");
     this.itineraire.addActionListener(topBarListener);
+
     this.transports = new JButton("Transports");
     this.transports.addActionListener(topBarListener);
+
     this.agenda = new JButton("Agenda");
     this.agenda.addActionListener(topBarListener);
+
     this.parametres = new JButton("Parametres");
     this.parametres.addActionListener(topBarListener);
 
