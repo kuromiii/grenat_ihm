@@ -28,7 +28,7 @@ public class CalenderFrame extends JPanel {
 
   public void initComponents() {
     addTrajet = new JButton("Ajouter un trajet");
-    calendrier = new JPanel(new GridLayout(11,8))
+    calendrier = new JPanel(new GridLayout(11,8));
     cal = new GregorianCalendar();
     setLayout(new BorderLayout());
 
