@@ -32,14 +32,18 @@ public class MainMenuFrame extends JPanel {
       MainMenuButtonListener mainMenuListener = new MainMenuButtonListener(this.parent, this);
 
       boutonItineraire = new JButton();
-      boutonItineraire.addActionListener(mainMenuListener);
       boutonAgenda = new JButton();
-      boutonAgenda.addActionListener(mainMenuListener);
       boutonTransport = new JButton();
-      boutonTransport.addActionListener(mainMenuListener);
       boutonItineraireTexte = new JButton("Itineraire");
       boutonAgendaTexte = new JButton ("Agenda");
       boutonTransportTexte = new JButton("Transports");
+
+      boutonItineraire.addActionListener(mainMenuListener);
+      boutonAgenda.addActionListener(mainMenuListener);
+      boutonTransport.addActionListener(mainMenuListener);
+      boutonItineraireTexte.addActionListener(mainMenuListener);
+      boutonAgendaTexte.addActionListener(mainMenuListener);
+      boutonTransportTexte.addActionListener(mainMenuListener);
 
       Image img = (new ImageIcon("../img/Itineraire.png")).getImage();
       Image newImg = img.getScaledInstance(120,120,Image.SCALE_SMOOTH);

@@ -38,6 +38,10 @@ public class VehicleFrame extends JPanel {
       this.boutonMetroTexte = new JButton ("Metro");
       this.boutonTrainTexte = new JButton("Train");
 
+      this.boutonBusTexte.addActionListener(vehiListener);
+      this.boutonMetroTexte.addActionListener(vehiListener);
+      this.boutonTrainTexte.addActionListener(vehiListener);
+
       Image img = (new ImageIcon("../img/Bus.png")).getImage();
       Image newImg = img.getScaledInstance(120,120,Image.SCALE_SMOOTH);
       this.boutonBus.setIcon(new ImageIcon(newImg));
