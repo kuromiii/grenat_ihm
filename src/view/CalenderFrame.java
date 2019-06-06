@@ -16,17 +16,12 @@ public class CalenderFrame extends JPanel {
   private JPanel calendrier;
   private GregorianCalendar cal;
 
-  public CalenderFrame() {
-    try {
-			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-		}
-		catch (UnsupportedLookAndFeelException e) {
-			e.printStackTrace();
-		}
-    catch (ReflectiveOperationException e) {
-      e.printStackTrace();
-    }
+  private static final Color TRAIN_COLOR = new Color(240, 59, 105);
+  private static final Color BUS_COLOR = new Color(244, 122, 84);
+  private static final Color METRO_COLOR = new Color(243, 94, 152);
+  private static final Color CAR_COLOR = new Color(247, 146, 181);
 
+  public CalenderFrame() {
     initComponents();
   }
 
@@ -53,7 +48,7 @@ public class CalenderFrame extends JPanel {
     cal = new GregorianCalendar(timeZone);
     cal.setTime(date);
     String dayString = dayFormat.format(date);
-    int numero = cal.get(cal.DAY_OF_MONTH);
+    int numero = cal.get(Calendar.DAY_OF_MONTH);
     up.add(new JLabel(dayName[0] + " " + numero));
     for (int i = 1 ; i < 7 ; i++) {
       numero += 1;
@@ -64,7 +59,7 @@ public class CalenderFrame extends JPanel {
     calendrier.add(new JLabel("9:00"));
     JPanel p = new JPanel(new BorderLayout());
     p.add(new JLabel("Train pour Paris"));
-    p.setBackground(new Color(0xF03B69));
+    p.setBackground(CalenderFrame.TRAIN_COLOR);
     calendrier.add(p);
     p = new JPanel(new BorderLayout());
     calendrier.add(p);
@@ -72,7 +67,7 @@ public class CalenderFrame extends JPanel {
     calendrier.add(p);
     p = new JPanel(new BorderLayout());
     p.add(new JLabel("En voiture chez mamie"));
-    p.setBackground(new Color(0xF792B5));
+    p.setBackground(CalenderFrame.CAR_COLOR);
     calendrier.add(p);
     p = new JPanel(new BorderLayout());
     calendrier.add(p);
@@ -83,13 +78,13 @@ public class CalenderFrame extends JPanel {
     calendrier.add(new JLabel("10:00"));
     p = new JPanel(new BorderLayout());
     p.add(new JLabel("Train pour Paris"));
-    p.setBackground(new Color(0xF03B69));
+    p.setBackground(CalenderFrame.TRAIN_COLOR);
     calendrier.add(p);
     p = new JPanel(new BorderLayout());
     calendrier.add(p);
     p = new JPanel(new BorderLayout());
     p.add(new JLabel("Bus vers la mairie"));
-    p.setBackground(new Color(0xF47A54));
+    p.setBackground(CalenderFrame.BUS_COLOR);
     calendrier.add(p);
     p = new JPanel(new BorderLayout());
     calendrier.add(p);
@@ -99,12 +94,12 @@ public class CalenderFrame extends JPanel {
     calendrier.add(p);
     p = new JPanel(new BorderLayout());
     p.add(new JLabel("Bus vers Carrefour"));
-    p.setBackground(new Color(0xF47A54));
+    p.setBackground(CalenderFrame.BUS_COLOR);
     calendrier.add(p);
     calendrier.add(new JLabel("11:00"));
     p = new JPanel(new BorderLayout());
     p.add(new JLabel("Metro ligne 11"));
-    p.setBackground(new Color(0xF35E98));
+    p.setBackground(CalenderFrame.METRO_COLOR);
     calendrier.add(p);
     p = new JPanel(new BorderLayout());
     calendrier.add(p);
@@ -112,7 +107,7 @@ public class CalenderFrame extends JPanel {
     calendrier.add(p);
     p = new JPanel(new BorderLayout());
     p.add(new JLabel("Bus vers le bowling"));
-    p.setBackground(new Color(0xF47A54));
+    p.setBackground(CalenderFrame.BUS_COLOR);
     calendrier.add(p);
     p = new JPanel(new BorderLayout());
     calendrier.add(p);
@@ -124,7 +119,7 @@ public class CalenderFrame extends JPanel {
     p = new JPanel(new BorderLayout());
     calendrier.add(p);
     p.add(new JLabel("Bus vers chez JP"));
-    p.setBackground(new Color(0xF47A54));
+    p.setBackground(CalenderFrame.BUS_COLOR);
     p = new JPanel(new BorderLayout());
     calendrier.add(p);
     p = new JPanel(new BorderLayout());
@@ -137,7 +132,7 @@ public class CalenderFrame extends JPanel {
     calendrier.add(p);
     p = new JPanel(new BorderLayout());
     p.add(new JLabel("Bus vers la maison"));
-    p.setBackground(new Color(0xF47A54));
+    p.setBackground(CalenderFrame.BUS_COLOR);
     calendrier.add(p);
     calendrier.add(new JLabel("13:00"));
     p = new JPanel(new BorderLayout());
@@ -157,7 +152,7 @@ public class CalenderFrame extends JPanel {
     calendrier.add(new JLabel("14:00"));
     p = new JPanel(new BorderLayout());
     p.add(new JLabel("Bus vers chez les cousins"));
-    p.setBackground(new Color(0xF47A54));
+    p.setBackground(CalenderFrame.BUS_COLOR);
     calendrier.add(p);
     p = new JPanel(new BorderLayout());
     calendrier.add(p);
@@ -169,7 +164,7 @@ public class CalenderFrame extends JPanel {
     calendrier.add(p);
     p = new JPanel(new BorderLayout());
     p.add(new JLabel("Train vers la maison"));
-    p.setBackground(new Color(0xF03B69));
+    p.setBackground(CalenderFrame.TRAIN_COLOR);
     calendrier.add(p);
     p = new JPanel(new BorderLayout());
     calendrier.add(p);
@@ -186,7 +181,7 @@ public class CalenderFrame extends JPanel {
     calendrier.add(p);
     p = new JPanel(new BorderLayout());
     p.add(new JLabel("Train vers la maison"));
-    p.setBackground(new Color(0xF03B69));
+    p.setBackground(CalenderFrame.TRAIN_COLOR);
     calendrier.add(p);
     p = new JPanel(new BorderLayout());
     calendrier.add(p);
@@ -203,7 +198,7 @@ public class CalenderFrame extends JPanel {
     calendrier.add(p);
     p = new JPanel(new BorderLayout());
     p.add(new JLabel("Bus vers la maison"));
-    p.setBackground(new Color(0xF47A54));
+    p.setBackground(CalenderFrame.BUS_COLOR);
     calendrier.add(p);
     p = new JPanel(new BorderLayout());
     calendrier.add(p);

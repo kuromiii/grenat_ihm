@@ -15,16 +15,6 @@ public class TopBar extends JPanel {
   private static final Color COLOR = new Color(173, 20, 87);
 
   public TopBar(MainFrame parent) {
-    try {
-			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-		}
-		catch (UnsupportedLookAndFeelException e) {
-			e.printStackTrace();
-		}
-    catch (ReflectiveOperationException e) {
-      e.printStackTrace();
-    }
-
     if (parent != null) {
       this.parent = parent;
     }
