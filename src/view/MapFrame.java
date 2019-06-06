@@ -5,46 +5,49 @@ import java.io.IOException;
 
 public class MapFrame extends JPanel {
 
-  private JTextField adresseDepartField;
-  private JTextField adresseArriveField;
+  private JTextField addressBeginField;
+  private JTextField addressEndField;
 
-  /**
-    *Creates a new MapFrame object
-    */
+    /**
+     * MapFrame constructor.
+     * Initializes components.
+     */
     public MapFrame() {
       this.initComponent();
     }
 
-  /**
-    *Initializes the components
-    */
+    /**
+     * Initializes components of the panel.
+     */
     public void initComponent() {
       JPanel left = new JPanel(new BorderLayout());
 
-      this.adresseDepartField = new JTextField("Adresse de depart");
-      this.adresseArriveField = new JTextField("Adresse d'arrivee");
+      this.addressBeginField = new JTextField("Adresse de depart");
+      this.addressEndField = new JTextField("Adresse d'arrivee");
 
+      // This is the biggest hack ever, we basically fill a JTextField with \n,
+      // in order to have padding under the address panel
       JTextArea hack = new JTextArea("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
       hack.setEditable(false);
 
       JPanel upperLeft = new JPanel(new BorderLayout());
       JPanel itineraire = new JPanel(new GridLayout(2,1));
 
-      JPanel departPanel = new JPanel(new GridLayout(1,2));
-      departPanel.add(this.adresseDepartField);
-      departPanel.add(new JLabel(new ImageIcon("../img/Pin.png")));
-      itineraire.add(departPanel);
+      JPanel beginPanel = new JPanel(new GridLayout(1,2));
+      beginPanel.add(this.addressBeginField);
+      beginPanel.add(new JLabel(new ImageIcon("../img/Pin.png")));
+      itineraire.add(beginPanel);
 
-      JPanel arivePanel = new JPanel(new GridLayout(1,2));
-      arivePanel.add(this.adresseArriveField);
-      arivePanel.add(new JLabel(new ImageIcon("../img/HousePin.png")));
-      itineraire.add(arivePanel);
+      JPanel endPanel = new JPanel(new GridLayout(1,2));
+      endPanel.add(this.addressEndField);
+      endPanel.add(new JLabel(new ImageIcon("../img/HousePin.png")));
+      itineraire.add(endPanel);
 
       upperLeft.add(itineraire,BorderLayout.NORTH);
       upperLeft.add(hack,BorderLayout.SOUTH);
 
-      add(upperLeft, BorderLayout.WEST);
-      add(new JLabel(new ImageIcon("../img/map.png")),BorderLayout.CENTER);
+      this.add(upperLeft, BorderLayout.WEST);
+      this.add(new JLabel(new ImageIcon("../img/map.png")),BorderLayout.CENTER);
     }
 
 }

@@ -18,6 +18,7 @@ public class VehicleFrame extends JPanel {
     /**
      * VehicleFrame constructor.
      * Checks if the given parent is valid, throws an error otherwise.
+     * Then, initializes components.
      * @param parent the parent frame, needed by the MainMenuButtonListener
      */
     public VehicleFrame(MainFrame parent) {

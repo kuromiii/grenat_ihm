@@ -14,6 +14,8 @@ public class HomePageFrame extends JPanel {
 
   /**
    * HomePageFrame constructor.
+   * Checks if parent is valid, throws an error otherwise.
+   * Then, initializes components.
    * @param parent the parent frame, needed by the HomePageButtonListener
    */
   public HomePageFrame(MainFrame parent) {

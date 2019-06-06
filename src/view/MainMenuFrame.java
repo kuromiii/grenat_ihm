@@ -18,6 +18,7 @@ public class MainMenuFrame extends JPanel {
     /**
      * MainMenuFrame constructor.
      * Checks if the given parent is valid, throws an error otherwise.
+     * Then, initializes components.
      * @param parent the parent frame, needed by the MainMenuButtonListener
      */
     public MainMenuFrame(MainFrame parent) {

@@ -22,6 +22,10 @@ public class CalenderFrame extends JPanel {
   private static final Color METRO_COLOR = new Color(243, 94, 152);
   private static final Color CAR_COLOR = new Color(247, 146, 181);
 
+  /**
+   * CalenderFrame constructor.
+   * Initializes components.
+   */
   public CalenderFrame() {
     this.initComponents();
   }
