@@ -7,6 +7,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Date;
 import java.util.TimeZone;
+import java.text.SimpleDateFormat;
 
 public class CalenderFrame extends JPanel {
 
@@ -40,7 +41,8 @@ public class CalenderFrame extends JPanel {
 
     JPanel up = new JPanel (new GridLayout(1,8));
     TimeZone timeZone = TimeZone.getTimeZone("Europe/Paris");
-    LocalDate today = LacalDate.now();
+    SimpleDateFormat dayFormat = new SimpleDateFormat("dd-MM-yyyy");
+    LocalDate today = LocalDate.now();
     LocalDate monday = today.minusDays(today.getDayOfWeek().getValue()-1);
     Instant instant = monday.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant();
     Date date = Date.from(instant);
@@ -49,8 +51,8 @@ public class CalenderFrame extends JPanel {
     String dayString = dayFormat.format(date);
     String[] dayArray = new String[7];
         for (int i = 0; i < 6; i++) {
-            calendar.add(Calendar.DATE, i);
-            date = calendar.getTime();
+            cal.add(Calendar.DATE, i);
+            date = cal.getTime();
             System.out.println ("getDates - date=" + date);
             dayString = dayFormat.format(date);
             System.out.println("getDates - dayString=" + dayString);
