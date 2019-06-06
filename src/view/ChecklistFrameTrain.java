@@ -64,6 +64,8 @@ public class ChecklistFrameTrain extends JPanel {
     main.add(ck7);
 
     add(main);
+
+    this.setActrionListener(new CheckboxListener(this.getListeCheckBox()));
   }
 
 

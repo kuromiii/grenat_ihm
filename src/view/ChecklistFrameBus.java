@@ -48,6 +48,8 @@ public class ChecklistFrameBus extends JPanel {
     main.add(ck4);
 
     add(main);
+
+    this.setActrionListener(new CheckboxListener(this.getListeCheckBox()));
   }
 
   public ArrayList<Checkbox> getListeCheckBox() {
