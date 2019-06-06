@@ -67,7 +67,7 @@ public class MainFrame extends JFrame {
     this.switchablePanel.add(this.ckFrameTrain, "Train");
 
     this.switchableCL = (CardLayout)(this.switchablePanel.getLayout());
-    this.switchableCL.show(this.switchablePanel, "Main Menu");
+    this.switchableCL.show(this.switchablePanel, "Metro");
 
     this.add(this.topBar, BorderLayout.NORTH);
     this.add(this.switchablePanel, BorderLayout.CENTER);
