@@ -4,6 +4,8 @@ import java.awt.*;
 import javax.swing.*;
 import java.util.ArrayList;
 
+import controller.CheckboxListener;
+
 public class ChecklistFrameMetro extends JPanel {
   private Checkbox ck1;
   private Checkbox ck2;
@@ -54,7 +56,8 @@ public class ChecklistFrameMetro extends JPanel {
 
     add(main);
 
-    this.setActrionListener(new CheckboxListener(this.getListeCheckBox()));
+    //En fait on peut pas ajouter un ActionListener a un JPanel
+    this.addActionListener(new CheckboxListener(this.getListeCheckBox()));
   }
 
 
