@@ -8,6 +8,7 @@ import java.util.GregorianCalendar;
 import java.util.Date;
 import java.util.TimeZone;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 
 public class CalenderFrame extends JPanel {
 
@@ -38,8 +39,11 @@ public class CalenderFrame extends JPanel {
     down.add(new JLabel());
     down.add(new JLabel());
     down.add(addTrajet);
+    add(down,BorderLayout.SOUTH);
 
     JPanel up = new JPanel (new GridLayout(1,8));
+    up.add(new JPanel());
+    String[] dayName = {"Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi","Dimanche"};
     TimeZone timeZone = TimeZone.getTimeZone("Europe/Paris");
     SimpleDateFormat dayFormat = new SimpleDateFormat("dd-MM-yyyy");
     LocalDate today = LocalDate.now();
@@ -49,13 +53,13 @@ public class CalenderFrame extends JPanel {
     cal = new GregorianCalendar(timeZone);
     cal.setTime(date);
     String dayString = dayFormat.format(date);
-    String[] dayArray = new String[7];
-        for (int i = 0; i < 6; i++) {
-            cal.add(Calendar.DATE, i);
-            date = cal.getTime();
-            System.out.println ("getDates - date=" + date);
-            dayString = dayFormat.format(date);
-            System.out.println("getDates - dayString=" + dayString);
-        }
+    int numero = cal.get(cal.DAY_OF_MONTH);
+    up.add(new JLabel(dayName[0] + " " + numero));
+    for (int i = 1 ; i < 7 ; i++) {
+      numero += 1;
+      up.add(new JLabel(dayName[i] + " " + numero));
+    }
+    add(up,BorderLayout.NORTH);
+
   }
 }
