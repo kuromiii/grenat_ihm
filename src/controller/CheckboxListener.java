@@ -2,15 +2,16 @@ package controller;
 
 import java.awt.*;
 import javax.swing.*;
+import java.awt.event.*;
 import java.util.ArrayList;
 
 import view.*;
 
-public class CheckboxListener extends ActionListener {
+public class CheckboxListener implements ActionListener {
 
-  private ArrayList<CheckboxInterface> list;
+  private ArrayList<Checkbox> list;
 
-  public CheckboxListener (ArrayList<CheckboxInterface> list) {
+  public CheckboxListener (ArrayList<Checkbox> list) {
     try {
       if (list == null) {
         throw new Exception("Erreur du constructeur CheckboxListener(), parametre null");
