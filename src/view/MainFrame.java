@@ -5,12 +5,12 @@ import java.awt.*;
 
 public class MainFrame extends JFrame {
   private TopBar topBar;
-  private JPanel switchablePanel;
 
+  private JPanel switchablePanel;
   private CardLayout switchableCL;
 
+  // Different panels of the application, needs to be loaded here
   CalenderFrame calenderFrame;
-  ChecklistFrame checklistFrame;
   MainMenuFrame mainMenuFrame;
   MapFrame mapFrame;
   SettingsFrame settingsFrame;
@@ -44,12 +44,11 @@ public class MainFrame extends JFrame {
   private void initComponents() {
     this.topBar = new TopBar(this);
 
-    this.mainMenuFrame = new MainMenuFrame();
+    this.mainMenuFrame = new MainMenuFrame(this);
     this.calenderFrame = new CalenderFrame();
-    this.checklistFrame = new ChecklistFrame();
     this.mapFrame = new MapFrame();
     this.settingsFrame = new SettingsFrame();
-    this.vehicleFrame = new VehicleFrame();
+    this.vehicleFrame = new VehicleFrame(this);
     this.ckFrameMetro = new ChecklistFrameMetro();
     this.ckFrameBus = new ChecklistFrameBus();
     this.ckFrameTrain = new ChecklistFrameTrain();
@@ -58,7 +57,6 @@ public class MainFrame extends JFrame {
 
     this.switchablePanel.add(this.mainMenuFrame, "Main Menu");
     this.switchablePanel.add(this.calenderFrame, "Calender");
-    this.switchablePanel.add(this.checklistFrame, "Checklist");
     this.switchablePanel.add(this.mapFrame, "Map");
     this.switchablePanel.add(this.settingsFrame, "Settings");
     this.switchablePanel.add(this.vehicleFrame, "Vehicle");
@@ -67,7 +65,7 @@ public class MainFrame extends JFrame {
     this.switchablePanel.add(this.ckFrameTrain, "Train");
 
     this.switchableCL = (CardLayout)(this.switchablePanel.getLayout());
-    this.switchableCL.show(this.switchablePanel, "Metro");
+    this.switchableCL.show(this.switchablePanel, "Main Menu");
 
     this.add(this.topBar, BorderLayout.NORTH);
     this.add(this.switchablePanel, BorderLayout.CENTER);
