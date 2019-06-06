@@ -50,8 +50,8 @@ public class ChecklistFrameBus extends JPanel {
     add(main);
   }
 
-  public ArrayList<CheckBox> getListeCheckBox() {
-    ArrayList<CheckBox> ret = new ArrayList<CheckBox>();
+  public ArrayList<Checkbox> getListeCheckBox() {
+    ArrayList<Checkbox> ret = new ArrayList<Checkbox>();
 
     ret.add(this.ck1);
     ret.add(this.ck4);
