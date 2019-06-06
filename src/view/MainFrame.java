@@ -69,6 +69,7 @@ public class MainFrame extends JFrame {
 
     this.add(this.topBar, BorderLayout.NORTH);
     this.add(this.switchablePanel, BorderLayout.CENTER);
+    this.setResizable(false);
   }
 
   public JPanel getSwitchablePanel() {
