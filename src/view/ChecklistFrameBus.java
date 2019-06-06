@@ -24,11 +24,28 @@ public class ChecklistFrameBus extends JPanel {
   }
 
   public void initComponents() {
-    JPanel main = new JPanel(new BorderLayout());
     ck1 = new Checkbox("Rentrer dans le bus par l'avant", false);
     ck2 = new Checkbox("Prendre un ticket de bus aupres du conducteur", false);
     ck3 = new Checkbox("Valider le ticket dans la machine", false);
     ck4 = new Checkbox("Descendre du bus par l'arriere lorsque l'arret a ete atteint", false);
 
+    ck2.setVisible(false);
+    ck3.setVisible(false);
+    ck4.setVisible(false);
+
+    ck1.setForeground(Color.RED);
+    ck2.setForeground(Color.RED);
+    ck3.setForeground(Color.RED);
+    ck4.setForeground(Color.RED);
+
+    setLayout(new BorderLayout());
+    JPanel main = new JPanel(new GridLayout(4,1));
+
+    main.add(ck1);
+    main.add(ck2);
+    main.add(ck3);
+    main.add(ck4);
+
+    add(main);
   }
 }
