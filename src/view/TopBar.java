@@ -8,9 +8,7 @@ import controller.*;
 public class TopBar extends JPanel {
   private MainFrame parent;
 
-  private ImageIcon logo;
-
-  private JButton itineraire, transports, agenda, parametres;
+  private JButton itineraire, transports, agenda, parametres, boutonLogo;
 
   private static final Color COLOR = new Color(173, 20, 87);
 
@@ -19,13 +17,18 @@ public class TopBar extends JPanel {
       this.parent = parent;
     }
 
-    initComponents();
+    this.initComponents();
   }
 
   public void initComponents() {
     TopBarButtonListener topBarListener = new TopBarButtonListener(this, this.parent);
 
-    this.logo = new ImageIcon("../img/LogoSmall.png");
+    this.boutonLogo = new JButton();
+    this.boutonLogo.setIcon(new ImageIcon("../img/LogoSmall.png"));
+    this.boutonLogo.setOpaque(false);
+    this.boutonLogo.setContentAreaFilled(false);
+    this.boutonLogo.setBorderPainted(false);
+    this.boutonLogo.addActionListener(topBarListener);
 
     this.itineraire = new JButton("Itineraire");
     this.itineraire.addActionListener(topBarListener);
@@ -40,15 +43,19 @@ public class TopBar extends JPanel {
     this.parametres.addActionListener(topBarListener);
 
     JPanel b = new JPanel();
+    b.add(this.boutonLogo);
     b.add(this.itineraire);
     b.add(this.transports);
     b.add(this.agenda);
     b.add(this.parametres);
     b.setBackground(COLOR);
 
-    this.add(new JLabel(this.logo));
     this.add(b);
     this.setBackground(COLOR);
+  }
+
+  public JButton getLogoButton() {
+    return this.boutonLogo;
   }
 
   public JButton getItineraireButton() {
