@@ -50,9 +50,11 @@ public class ChecklistFrameBus extends JPanel {
     main.add(ck4);
 
     add(main);
-
-//En fait on peut pas ajouter un ActionListener a un JPanel
-    this.addActionListener(new CheckboxListener(this.getListeCheckBox()));
+    CheckboxListener cListener = new CheckboxListener(this.getListeCheckBox());
+    ck1.addActionListener(cListener);
+    ck2.addActionListener(cListener);
+    ck3.addActionListener(cListener);
+    ck4.addActionListener(cListener);
   }
 
   public ArrayList<Checkbox> getListeCheckBox() {

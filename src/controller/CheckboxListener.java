@@ -10,7 +10,6 @@ import view.*;
 public class CheckboxListener implements ActionListener {
 
   private ArrayList<Checkbox> list;
-  private int cursor = 0;
 
   public CheckboxListener (ArrayList<Checkbox> list) {
     try {
@@ -25,16 +24,14 @@ public class CheckboxListener implements ActionListener {
   }
 
   public void actionPerformed (ActionEvent e) {
-    if (((Checkbox)e.getSource()).equals(this.list.get(this.cursor))) {
-      this.list.get(this.cursor).setEnabled(false);
-      this.list.get(this.cursor).setForeground(Color.GREEN);
-      this.cursor++;
-      if (this.cursor < this.list.size()) {
-        this.list.get(this.cursor).setVisible(true);
-      }
-      else {
-
-      }
+    Checkbox self = ((Checkbox)e.getSource());
+    self.setEnabled(false);
+    self.setForeground(Color.GREEN);
+    int cursor = this.list.indexOf(self) + 1;
+    if (cursor < this.list.size()) {
+      this.list.get(cursor).setVisible(true);
+    }
+    else {
     }
   }
 }
