@@ -42,6 +42,16 @@ public class VehicleFrame extends JPanel {
       this.boutonMetroTexte.addActionListener(vehiListener);
       this.boutonTrainTexte.addActionListener(vehiListener);
 
+      this.boutonBus.setBackground(new Color(0xFBE8E8));
+      this.boutonBusTexte.setBackground(new Color(0xFBE8E8));
+      this.boutonMetro.setBackground(new Color(0xFBE8E8));
+      this.boutonMetroTexte.setBackground(new Color(0xFBE8E8));
+      this.boutonTrain.setBackground(new Color(0xFBE8E8));
+      this.boutonTrainTexte.setBackground(new Color(0xFBE8E8));
+
+
+
+
       Image img = (new ImageIcon("../img/Bus.png")).getImage();
       Image newImg = img.getScaledInstance(120,120,Image.SCALE_SMOOTH);
       this.boutonBus.setIcon(new ImageIcon(newImg));
