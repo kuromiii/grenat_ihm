@@ -18,6 +18,7 @@ public class MainFrame extends JFrame {
   ChecklistFrameBus ckFrameBus;
   ChecklistFrameMetro ckFrameMetro;
   ChecklistFrameTrain ckFrameTrain;
+  HomePageFrame homePage;
 
   /**
    * Create a MainFrame object.
@@ -52,6 +53,7 @@ public class MainFrame extends JFrame {
     this.ckFrameMetro = new ChecklistFrameMetro();
     this.ckFrameBus = new ChecklistFrameBus();
     this.ckFrameTrain = new ChecklistFrameTrain();
+    this.homePage = new HomePageFrame();
 
     this.switchablePanel = new JPanel(new CardLayout());
 
@@ -63,6 +65,7 @@ public class MainFrame extends JFrame {
     this.switchablePanel.add(this.ckFrameMetro, "Metro");
     this.switchablePanel.add(this.ckFrameBus, "Bus");
     this.switchablePanel.add(this.ckFrameTrain, "Train");
+    this.switchablePanel.add(this.homePage, "Home");
 
     this.switchableCL = (CardLayout)(this.switchablePanel.getLayout());
     this.switchableCL.show(this.switchablePanel, "Main Menu");
