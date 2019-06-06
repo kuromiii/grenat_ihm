@@ -61,5 +61,42 @@ public class CalenderFrame extends JPanel {
     }
     add(up,BorderLayout.NORTH);
 
+    calendrier.add(new JLabel("9:00"));
+    JPanel p = new JPanel(new BorderLayout());
+    p.add(new JLabel("Train pour Paris"));
+    p.setBackground(new Color(173,20,87));
+    calendrier.add(p);
+    p = new JPanel(new BorderLayout());
+    calendrier.add(p);
+    p = new JPanel(new BorderLayout());
+    calendrier.add(p);
+    p = new JPanel(new BorderLayout());
+    p.add(new JLabel("En voiture chez mamie"));
+    calendrier.add(p);
+    p = new JPanel(new BorderLayout());
+    calendrier.add(p);
+    p = new JPanel(new BorderLayout());
+    calendrier.add(p);
+    p = new JPanel(new BorderLayout());
+    calendrier.add(p);
+    calendrier.add(new JLabel("10:00"));
+    p = new JPanel(new BorderLayout());
+    p.add(new JLabel("Train pour Paris"));
+    calendrier.add(p);
+    p = new JPanel(new BorderLayout());
+    calendrier.add(p);
+    p = new JPanel(new BorderLayout());
+    p.add(new JLabel("Bus vers la mairie"));
+    calendrier.add(p);
+    p = new JPanel(new BorderLayout());
+    calendrier.add(p);
+    p = new JPanel(new BorderLayout());
+    calendrier.add(p);
+    p = new JPanel(new BorderLayout());
+    calendrier.add(p);
+    p = new JPanel(new BorderLayout());
+    p.add(new JLabel("Bus vers Carrefour"));
+    calendrier.add(p);
+    add(calendrier,BorderLayout.CENTER);
   }
 }
