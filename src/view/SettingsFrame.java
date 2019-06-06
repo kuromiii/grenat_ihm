@@ -14,6 +14,7 @@ public class SettingsFrame extends JPanel {
     String[] settings = {"Apparence", "Accessibilite", "Notifications",
      "Utilisation de la batterie", "Utilisation du reseau"};
     JList<String> list = new JList<String>(settings);
+    
     this.setLayout(new BorderLayout());
     this.add(list,BorderLayout.WEST);
   }

@@ -14,6 +14,8 @@ public class HomePageFrame extends JPanel {
     if (parent != null) {
       this.parent = parent;
       this.initComponents();
+    } else {
+      throw new NullPointerException();
     }
   }
 

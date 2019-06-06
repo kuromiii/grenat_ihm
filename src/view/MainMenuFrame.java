@@ -8,13 +8,10 @@ public class MainMenuFrame extends JPanel {
 
   private MainFrame parent;
 
-  private JButton boutonItineraire;
-  private JButton boutonAgenda;
-  private JButton boutonTransport;
-  private JButton boutonItineraireTexte;
-  private JButton boutonAgendaTexte;
-  private JButton boutonTransportTexte;
-  private final Color COLOR = new Color(0xFBE8E8);
+  private JButton mapBtn, calendarBtn, vehicleBtn;
+  private JButton mapTextBtn, calendarTextBtn, vehicleTextBtn;
+
+  private final Color BUTTON_COLOR = new Color(251, 232, 232);
 
   /**
     *Creates a new MainMenuFrame object
@@ -22,7 +19,9 @@ public class MainMenuFrame extends JPanel {
     public MainMenuFrame(MainFrame parent) {
       if (parent != null) {
         this.parent = parent;
-        initComponent();
+        this.initComponent();
+      } else {
+        throw new NullPointerException();
       }
     }
 
@@ -32,43 +31,49 @@ public class MainMenuFrame extends JPanel {
     private void initComponent() {
       MainMenuButtonListener mainMenuListener = new MainMenuButtonListener(this.parent, this);
 
-      boutonItineraire = new JButton();
-      boutonAgenda = new JButton();
-      boutonTransport = new JButton();
-      boutonItineraireTexte = new JButton("Itineraire");
-      boutonAgendaTexte = new JButton ("Agenda");
-      boutonTransportTexte = new JButton("Transports");
+      Image mapImg = (new ImageIcon("../img/Itineraire.png")).getImage();
+      Image rescaledMapImg = mapImg.getScaledInstance(120,120,Image.SCALE_SMOOTH);
 
-      boutonItineraire.addActionListener(mainMenuListener);
-      boutonAgenda.addActionListener(mainMenuListener);
-      boutonTransport.addActionListener(mainMenuListener);
-      boutonItineraireTexte.addActionListener(mainMenuListener);
-      boutonAgendaTexte.addActionListener(mainMenuListener);
-      boutonTransportTexte.addActionListener(mainMenuListener);
+      Image calendarImg = (new ImageIcon("../img/Agenda.png")).getImage();
+      Image rescaledCalendarImg = calendarImg.getScaledInstance(120,120,Image.SCALE_SMOOTH);
 
-      Image img = (new ImageIcon("../img/Itineraire.png")).getImage();
-      Image newImg = img.getScaledInstance(120,120,Image.SCALE_SMOOTH);
-      boutonItineraire.setIcon(new ImageIcon(newImg));
-      Image img2 = (new ImageIcon("../img/Agenda.png")).getImage();
-      Image newImg2 = img2.getScaledInstance(120,120,Image.SCALE_SMOOTH);
-      boutonAgenda.setIcon(new ImageIcon(newImg2));
-      Image img3 = (new ImageIcon("../img/Transport.png")).getImage();
-      Image newImg3 = img3.getScaledInstance(120,120,Image.SCALE_SMOOTH);
-      boutonTransport.setIcon(new ImageIcon(newImg3));
+      Image vehicleImg = (new ImageIcon("../img/Transport.png")).getImage();
+      Image rescaledVehicleImg = vehicleImg.getScaledInstance(120,120,Image.SCALE_SMOOTH);
 
-      this.boutonItineraire.setBackground(this.COLOR);
-      this.boutonAgenda.setBackground(this.COLOR);
-      this.boutonTransport.setBackground(this.COLOR);
-      this.boutonItineraireTexte.setBackground(this.COLOR);
-      this.boutonAgendaTexte.setBackground(this.COLOR);
-      this.boutonTransportTexte.setBackground(this.COLOR);
+      this.mapBtn = new JButton();
+      this.mapBtn.setBackground(this.BUTTON_COLOR);
+      this.mapBtn.setIcon(new ImageIcon(mapImg));
+      this.mapBtn.addActionListener(mainMenuListener);
+
+      this.calendarBtn = new JButton();
+      this.calendarBtn.setBackground(this.BUTTON_COLOR);
+      this.calendarBtn.setIcon(new ImageIcon(calendarImg));
+      this.calendarBtn.addActionListener(mainMenuListener);
+
+      this.vehicleBtn = new JButton();
+      this.vehicleBtn.setBackground(this.BUTTON_COLOR);
+      this.vehicleBtn.setIcon(new ImageIcon(vehicleImg));
+      this.vehicleBtn.addActionListener(mainMenuListener);
+
+      this.mapTextBtn = new JButton("Itineraire");
+      this.mapTextBtn.setBackground(this.BUTTON_COLOR);
+      this.mapTextBtn.addActionListener(mainMenuListener);
+
+      this.calendarTextBtn = new JButton ("Agenda");
+      this.calendarTextBtn.setBackground(this.BUTTON_COLOR);
+      this.calendarTextBtn.addActionListener(mainMenuListener);
+
+      this.vehicleTextBtn = new JButton("Transports");
+      this.vehicleTextBtn.setBackground(this.BUTTON_COLOR);
+      this.vehicleTextBtn.addActionListener(mainMenuListener);
 
       this.setLayout(new BorderLayout());
 
       JPanel centralPanel = new JPanel(new GridLayout(1,5));
+
       JPanel itineraire = new JPanel(new BorderLayout());
-      itineraire.add(boutonItineraire,BorderLayout.CENTER);
-      itineraire.add(boutonItineraireTexte,BorderLayout.SOUTH);
+      itineraire.add(this.mapBtn,BorderLayout.CENTER);
+      itineraire.add(this.mapTextBtn,BorderLayout.SOUTH);
 
       JPanel itineraireContainer = new JPanel(new GridLayout(3,1));
       itineraireContainer.add(new JPanel());
@@ -78,8 +83,9 @@ public class MainMenuFrame extends JPanel {
       centralPanel.add(new JLabel(""));
 
       JPanel agenda = new JPanel(new BorderLayout());
-      agenda.add(boutonAgenda,BorderLayout.CENTER);
-      agenda.add(boutonAgendaTexte,BorderLayout.SOUTH);
+      agenda.add(this.calendarBtn,BorderLayout.CENTER);
+      agenda.add(this.calendarTextBtn,BorderLayout.SOUTH);
+
       JPanel agendaContainer = new JPanel(new GridLayout(3,1));
       agendaContainer.add(new JPanel());
       agendaContainer.add(agenda);
@@ -88,8 +94,8 @@ public class MainMenuFrame extends JPanel {
       centralPanel.add(new JLabel(""));
 
       JPanel transports = new JPanel (new BorderLayout());
-      transports.add(boutonTransport,BorderLayout.CENTER);
-      transports.add(boutonTransportTexte,BorderLayout.SOUTH);
+      transports.add(this.vehicleBtn,BorderLayout.CENTER);
+      transports.add(this.vehicleTextBtn,BorderLayout.SOUTH);
 
       JPanel transportsContainer = new JPanel(new GridLayout(3,1));
       transportsContainer.add(new JPanel());
@@ -104,15 +110,15 @@ public class MainMenuFrame extends JPanel {
       add(centralContainer,BorderLayout.CENTER);
     }
 
-    public JButton getItineraireButton() {
-      return this.boutonItineraire;
+    public JButton getMapButton() {
+      return this.mapBtn;
     }
 
-    public JButton getAgendaButton() {
-      return this.boutonAgenda;
+    public JButton getCalendarButton() {
+      return this.calendarBtn;
     }
 
-    public JButton getTransportButton() {
-      return this.boutonTransport;
+    public JButton getVehicleButton() {
+      return this.vehicleBtn;
     }
 }

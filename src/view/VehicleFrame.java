@@ -8,9 +8,10 @@ import controller.*;
 public class VehicleFrame extends JPanel {
   private MainFrame parent;
 
-  private JButton boutonBus, boutonMetro, boutonTrain;
-  private JButton boutonBusTexte, boutonMetroTexte, boutonTrainTexte;
-  private final Color COLOR = new Color(0xFBE8E8);
+  private JButton busBtn, metroBtn, trainBtn;
+  private JButton busTextBtn, metroTextBtn, trainTextBtn;
+  
+  private final Color BUTTON_COLOR = new Color(251, 232, 232);
 
   /**
     *Creates a new VehicleFrame object
@@ -18,7 +19,9 @@ public class VehicleFrame extends JPanel {
     public VehicleFrame(MainFrame parent) {
       if (parent != null) {
         this.parent = parent;
-        initComponent();
+        this.initComponent();
+      } else {
+        throw new NullPointerException();
       }
     }
 
@@ -28,47 +31,48 @@ public class VehicleFrame extends JPanel {
     private void initComponent() {
       VehicleButtonListener vehiListener = new VehicleButtonListener(this.parent, this);
 
-      this.boutonBus = new JButton();
-      this.boutonBus.addActionListener(vehiListener);
-      this.boutonMetro = new JButton();
-      this.boutonMetro.addActionListener(vehiListener);
-      this.boutonTrain = new JButton();
-      this.boutonTrain.addActionListener(vehiListener);
+      Image busImg = (new ImageIcon("../img/Bus.png")).getImage();
+      Image rescaledBusImg = busImg.getScaledInstance(120,120,Image.SCALE_SMOOTH);
 
-      this.boutonBusTexte = new JButton("Bus");
-      this.boutonMetroTexte = new JButton ("Metro");
-      this.boutonTrainTexte = new JButton("Train");
+      Image metroImg = (new ImageIcon("../img/Metro.png")).getImage();
+      Image rescaledMetroImg = metroImg.getScaledInstance(120,120,Image.SCALE_SMOOTH);
 
-      this.boutonBusTexte.addActionListener(vehiListener);
-      this.boutonMetroTexte.addActionListener(vehiListener);
-      this.boutonTrainTexte.addActionListener(vehiListener);
+      Image trainImg = (new ImageIcon("../img/Train.png")).getImage();
+      Image rescaledTrainImg = trainImg.getScaledInstance(120,120,Image.SCALE_SMOOTH);
 
-      this.boutonBus.setBackground(this.COLOR);
-      this.boutonBusTexte.setBackground(this.COLOR);
-      this.boutonMetro.setBackground(this.COLOR);
-      this.boutonMetroTexte.setBackground(this.COLOR);
-      this.boutonTrain.setBackground(this.COLOR);
-      this.boutonTrainTexte.setBackground(this.COLOR);
+      this.busBtn = new JButton();
+      this.busBtn.setBackground(this.BUTTON_COLOR);
+      this.busBtn.addActionListener(vehiListener);
+      this.busBtn.setIcon(new ImageIcon(rescaledBusImg));
 
+      this.metroBtn = new JButton();
+      this.metroBtn.setBackground(this.BUTTON_COLOR);
+      this.metroBtn.addActionListener(vehiListener);
+      this.metroBtn.setIcon(new ImageIcon(rescaledMetroImg));
 
+      this.trainBtn = new JButton();
+      this.trainBtn.setBackground(this.BUTTON_COLOR);
+      this.trainBtn.addActionListener(vehiListener);
+      this.trainBtn.setIcon(new ImageIcon(rescaledTrainImg));
 
+      this.busTextBtn = new JButton("Bus");
+      this.busTextBtn.setBackground(this.BUTTON_COLOR);
+      this.busTextBtn.addActionListener(vehiListener);
 
-      Image img = (new ImageIcon("../img/Bus.png")).getImage();
-      Image newImg = img.getScaledInstance(120,120,Image.SCALE_SMOOTH);
-      this.boutonBus.setIcon(new ImageIcon(newImg));
-      Image img2 = (new ImageIcon("../img/Metro.png")).getImage();
-      Image newImg2 = img2.getScaledInstance(120,120,Image.SCALE_SMOOTH);
-      this.boutonMetro.setIcon(new ImageIcon(newImg2));
-      Image img3 = (new ImageIcon("../img/Train.png")).getImage();
-      Image newImg3 = img3.getScaledInstance(120,120,Image.SCALE_SMOOTH);
-      this.boutonTrain.setIcon(new ImageIcon(newImg3));
+      this.metroTextBtn = new JButton ("Metro");
+      this.metroTextBtn.setBackground(this.BUTTON_COLOR);
+      this.metroTextBtn.addActionListener(vehiListener);
+
+      this.trainTextBtn = new JButton("Train");
+      this.trainTextBtn.setBackground(this.BUTTON_COLOR);
+      this.trainTextBtn.addActionListener(vehiListener);
 
       this.setLayout(new BorderLayout());
 
       JPanel centralPanel = new JPanel(new GridLayout(1,5));
       JPanel bus = new JPanel(new BorderLayout());
-      bus.add(this.boutonBus,BorderLayout.CENTER);
-      bus.add(this.boutonBusTexte,BorderLayout.SOUTH);
+      bus.add(this.busBtn,BorderLayout.CENTER);
+      bus.add(this.busTextBtn,BorderLayout.SOUTH);
 
       JPanel busContainer = new JPanel(new GridLayout(3,1));
       busContainer.add(new JPanel());
@@ -78,8 +82,8 @@ public class VehicleFrame extends JPanel {
       centralPanel.add(new JLabel(""));
 
       JPanel metro = new JPanel(new BorderLayout());
-      metro.add(this.boutonMetro,BorderLayout.CENTER);
-      metro.add(this.boutonMetroTexte,BorderLayout.SOUTH);
+      metro.add(this.metroBtn,BorderLayout.CENTER);
+      metro.add(this.metroTextBtn,BorderLayout.SOUTH);
 
       JPanel metroContainer = new JPanel(new GridLayout(3,1));
       metroContainer.add(new JPanel());
@@ -89,8 +93,8 @@ public class VehicleFrame extends JPanel {
       centralPanel.add(new JLabel(""));
 
       JPanel train = new JPanel (new BorderLayout());
-      train.add(this.boutonTrain,BorderLayout.CENTER);
-      train.add(this.boutonTrainTexte,BorderLayout.SOUTH);
+      train.add(this.trainBtn,BorderLayout.CENTER);
+      train.add(this.trainTextBtn,BorderLayout.SOUTH);
 
       JPanel trainContainer = new JPanel(new GridLayout(3,1));
       trainContainer.add(new JPanel());
@@ -106,14 +110,14 @@ public class VehicleFrame extends JPanel {
     }
 
     public JButton getBusButton() {
-      return this.boutonBus;
+      return this.busBtn;
     }
 
     public JButton getMetroButton() {
-      return this.boutonMetro;
+      return this.metroBtn;
     }
 
     public JButton getTrainButton() {
-      return this.boutonTrain;
+      return this.trainBtn;
     }
 }

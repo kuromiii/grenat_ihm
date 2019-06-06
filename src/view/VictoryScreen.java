@@ -11,18 +11,21 @@ public class VictoryScreen extends JPanel {
     *Creates a new VictoryScreen object
     */
     public VictoryScreen() {
-      initComponent();
+      this.initComponent();
     }
 
   /**
     *Initializes the components
     */
     public void initComponent() {
-      setLayout(new BorderLayout());
+      this.setLayout(new BorderLayout());
+
       this.img = new ImageIcon("../img/Coupe.png");
       JLabel background = new JLabel(this.img);
+      
       this.button = new JButton("Retour a l'accueil");
-      add(this.button,BorderLayout.SOUTH);
-      add(background,BorderLayout.CENTER);
+
+      this.add(this.button,BorderLayout.SOUTH);
+      this.add(background,BorderLayout.CENTER);
     }
 }
