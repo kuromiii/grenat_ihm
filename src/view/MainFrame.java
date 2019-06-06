@@ -53,7 +53,7 @@ public class MainFrame extends JFrame {
     this.ckFrameMetro = new ChecklistFrameMetro();
     this.ckFrameBus = new ChecklistFrameBus();
     this.ckFrameTrain = new ChecklistFrameTrain();
-    this.homePage = new HomePageFrame();
+    this.homePage = new HomePageFrame(this);
 
     this.switchablePanel = new JPanel(new CardLayout());
 
@@ -68,7 +68,7 @@ public class MainFrame extends JFrame {
     this.switchablePanel.add(this.homePage, "Home");
 
     this.switchableCL = (CardLayout)(this.switchablePanel.getLayout());
-    this.switchableCL.show(this.switchablePanel, "Main Menu");
+    this.switchableCL.show(this.switchablePanel, "Home");
 
     this.add(this.topBar, BorderLayout.NORTH);
     this.add(this.switchablePanel, BorderLayout.CENTER);
