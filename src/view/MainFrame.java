@@ -15,6 +15,9 @@ public class MainFrame extends JFrame {
   MapFrame mapFrame;
   SettingsFrame settingsFrame;
   VehicleFrame vehicleFrame;
+  ChecklistFrameBus ckFrameBus;
+  ChecklistFrameMetro ckFrameMetro;
+  ChecklistFrameTrain ckFrameTrain;
 
   /**
    * Create a MainFrame object.
@@ -47,6 +50,9 @@ public class MainFrame extends JFrame {
     this.mapFrame = new MapFrame();
     this.settingsFrame = new SettingsFrame();
     this.vehicleFrame = new VehicleFrame();
+    this.ckFrameMetro = new ChecklistFrameMetro();
+    this.ckFrameBus = new ChecklistFrameBus();
+    this.ckFrameTrain = new ChecklistFrameTrain();
 
     this.switchablePanel = new JPanel(new CardLayout());
 
@@ -56,6 +62,9 @@ public class MainFrame extends JFrame {
     this.switchablePanel.add(this.mapFrame, "Map");
     this.switchablePanel.add(this.settingsFrame, "Settings");
     this.switchablePanel.add(this.vehicleFrame, "Vehicle");
+    this.switchablePanel.add(this.ckFrameMetro, "Metro");
+    this.switchablePanel.add(this.ckFrameBus, "Bus");
+    this.switchablePanel.add(this.ckFrameTrain, "Train");
 
     this.switchableCL = (CardLayout)(this.switchablePanel.getLayout());
     this.switchableCL.show(this.switchablePanel, "Main Menu");
