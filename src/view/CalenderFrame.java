@@ -160,7 +160,7 @@ public class CalenderFrame extends JPanel {
     calendrier.add(p);
     calendrier.add(new JLabel("14:00"));
     p = new JPanel(new BorderLayout());
-    p.add(new JLabel("Bus vers chez les cousins"));
+    p.add(new JLabel("Bus de 14h"));
     p.setBackground(CalenderFrame.BUS_COLOR);
     calendrier.add(p);
     p = new JPanel(new BorderLayout());

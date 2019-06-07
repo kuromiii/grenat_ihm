@@ -44,7 +44,7 @@ public class MainFrame extends JFrame {
     // Adjust size
     this.pack();
     this.setResizable(false);
-    this.setSize(1074, 650);
+    this.setSize(1300, 650);
 
     this.setVisible(true);
   }
