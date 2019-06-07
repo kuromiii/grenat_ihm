@@ -18,7 +18,7 @@ public class VictoryScreen extends JPanel {
     public VictoryScreen(MainFrame parent) {
       if (parent != null) {
           this.parent = parent;
-          this.initComponent();
+          this.initComponents();
       } else {
           throw new NullPointerException();
       }
@@ -27,7 +27,7 @@ public class VictoryScreen extends JPanel {
     /**
      * Initializes components of the panel.
      */
-    public void initComponent() {
+    public void initComponents() {
       this.setLayout(new BorderLayout());
 
       Image cupImg = (new ImageIcon("../img/Coupe.png")).getImage();

@@ -105,9 +105,9 @@ public class MainFrame extends JFrame {
   }
 
   /**
-    * Displays the victory screen
-    */
-    public void victory() {
-      this.switchableCL.show(this.switchablePanel , "Victory");
-    }
+   * Displays the victory screen
+   */
+  public void victory() {
+    this.switchableCL.show(this.switchablePanel , "Victory");
+  }
 }
