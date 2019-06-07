@@ -65,7 +65,7 @@ public class MainFrame extends JFrame {
     this.ckFrameBus = new ChecklistFrameBus(this);
     this.ckFrameTrain = new ChecklistFrameTrain(this);
     this.homePage = new HomePageFrame(this);
-    this.victory = new VictoryScreen();
+    this.victory = new VictoryScreen(this);
 
     this.switchablePanel = new JPanel(new CardLayout());
 

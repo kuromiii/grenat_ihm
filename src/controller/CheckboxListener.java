@@ -13,19 +13,6 @@ public class CheckboxListener implements ItemListener {
   private MainFrame mainFrame;
 
   /**
-   * CheckboxListener constructor.
-   * Checks if the given ArrayList list is valid, throws an error otherwise.
-   * @param list the ArrayList containing checkboxes
-   */
-  public CheckboxListener(ArrayList<Checkbox> list) {
-    if (list != null) {
-      this.list = list;
-    } else {
-      throw new NullPointerException();
-    }
-  }
-
-  /**
     * CheckboxListener constructor for the last Checkbox of the JPanel
     * @param list the ArrayList containing checkboxes
     * @param mainFrame the main frame of the application
@@ -55,12 +42,7 @@ public class CheckboxListener implements ItemListener {
       this.list.get(cursor).setVisible(true);
     }
     else {
-      try {
-        mainFrame.victory();
-      }
-      catch (NullPointerException ex) {
-        System.out.println(ex.getMessage());
-      }
+      this.mainFrame.victory();
     }
   }
 }

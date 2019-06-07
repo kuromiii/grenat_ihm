@@ -15,6 +15,7 @@ public class ChecklistFrameBus extends JPanel {
   /**
    * ChecklistFrameBus constructor.
    * Creates and Initializes an empty ArrayList, then initializes the components.
+   * @param parent the parent frame, needed by the CheckboxListener
    */
   public ChecklistFrameBus(MainFrame parent) {
     if (parent != null) {
@@ -32,14 +33,14 @@ public class ChecklistFrameBus extends JPanel {
    */
   public void initComponents() {
     this.setLayout(new BorderLayout());
-    CheckboxListener chkListener = new CheckboxListener(this.getCheckBoxList());
-    CheckboxListener lastChkListener = new CheckboxListener (this.getCheckBoxList(),this.parent);
 
-    JPanel main = new JPanel(new GridLayout(4,1));
+    CheckboxListener chkListener = new CheckboxListener(this.getCheckBoxList(), this.parent);
+    JPanel main = new JPanel(new GridLayout(this.chkList.size(), 1));
 
     this.chkList.add(new Checkbox("Rentrer dans le bus par l'avant", false));
     this.chkList.add(new Checkbox("Prendre un ticket de bus aupres du conducteur", false));
     this.chkList.add(new Checkbox("Valider le ticket dans la machine", false));
+    this.chkList.add(new Checkbox("Descendre du bus par l'arriere lorsque l'arret a ete atteint", false));
 
     // For each Checkbox except the last one, we set its text color to red, attach it the CheckboxListener,
     // and add it to the panel
@@ -48,13 +49,6 @@ public class ChecklistFrameBus extends JPanel {
       chk.addItemListener(chkListener);
       main.add(chk);
     }
-
-    // We attach to the last CheckBox the listener for displaying the victory screen
-    // Then we set its color tho red and add it to the panel
-    this.chkList.add(new Checkbox("Descendre du bus par l'arriere lorsque l'arret a ete atteint", false));
-    this.chkList.get(chkList.size()-1).setForeground(Color.RED);
-    this.chkList.get(chkList.size()-1).addItemListener(lastChkListener);
-    main.add(this.chkList.get(chkList.size()-1));
 
 
     // We hide every Checkbox besides the first one

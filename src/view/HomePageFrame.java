@@ -16,7 +16,7 @@ public class HomePageFrame extends JPanel {
    * HomePageFrame constructor.
    * Checks if parent is valid, throws an error otherwise.
    * Then, initializes components.
-   * @param parent the parent frame, needed by the HomePageButtonListener
+   * @param parent the parent frame, needed by the GoBackHomeButtonListener
    */
   public HomePageFrame(MainFrame parent) {
     if (parent != null) {
@@ -39,7 +39,7 @@ public class HomePageFrame extends JPanel {
     this.logoBtn.setOpaque(false);
     this.logoBtn.setContentAreaFilled(false);
     this.logoBtn.setBorderPainted(false);
-    this.logoBtn.addActionListener(new HomePageButtonListener(this.parent, this));
+    this.logoBtn.addActionListener(new GoBackHomeButtonListener(this.parent));
 
     this.setLayout(new BorderLayout());
     this.add(logoBtn);
