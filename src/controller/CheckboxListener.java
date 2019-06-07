@@ -10,6 +10,7 @@ import view.*;
 public class CheckboxListener implements ItemListener {
   // An ArrayList containing the Checkboxes
   private ArrayList<Checkbox> list;
+  private MainFrame mainFrame;
 
   /**
    * CheckboxListener constructor.
@@ -20,6 +21,21 @@ public class CheckboxListener implements ItemListener {
     if (list != null) {
       this.list = list;
     } else {
+      throw new NullPointerException();
+    }
+  }
+
+  /**
+    * CheckboxListener constructor for the last Checkbox of the JPanel
+    * @param list the ArrayList containing checkboxes
+    * @param mainFrame the main frame of the application
+    */
+  public CheckboxListener(ArrayList<Checkbox> list , MainFrame mainFrame) {
+    if (list != null && mainFrame != null) {
+      this.list = list;
+      this.mainFrame = mainFrame;
+    }
+    else {
       throw new NullPointerException();
     }
   }
@@ -37,6 +53,14 @@ public class CheckboxListener implements ItemListener {
     int cursor = this.list.indexOf(self) + 1;
     if (cursor < this.list.size()) {
       this.list.get(cursor).setVisible(true);
+    }
+    else {
+      try {
+        mainFrame.victory();
+      }
+      catch (NullPointerException ex) {
+        System.out.println(ex.getMessage());
+      }
     }
   }
 }

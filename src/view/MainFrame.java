@@ -21,6 +21,7 @@ public class MainFrame extends JFrame {
   ChecklistFrameMetro ckFrameMetro;
   ChecklistFrameTrain ckFrameTrain;
   HomePageFrame homePage;
+  VictoryScreen victory;
 
   /**
    * MainFrame constructor.
@@ -43,7 +44,7 @@ public class MainFrame extends JFrame {
     // Adjust size
     this.pack();
     this.setResizable(false);
-    this.setSize(1024, 650);
+    this.setSize(1074, 650);
 
     this.setVisible(true);
   }
@@ -60,10 +61,11 @@ public class MainFrame extends JFrame {
     this.mapFrame = new MapFrame();
     this.settingsFrame = new SettingsFrame();
     this.vehicleFrame = new VehicleFrame(this);
-    this.ckFrameMetro = new ChecklistFrameMetro();
-    this.ckFrameBus = new ChecklistFrameBus();
-    this.ckFrameTrain = new ChecklistFrameTrain();
+    this.ckFrameMetro = new ChecklistFrameMetro(this);
+    this.ckFrameBus = new ChecklistFrameBus(this);
+    this.ckFrameTrain = new ChecklistFrameTrain(this);
     this.homePage = new HomePageFrame(this);
+    this.victory = new VictoryScreen();
 
     this.switchablePanel = new JPanel(new CardLayout());
 
@@ -77,6 +79,7 @@ public class MainFrame extends JFrame {
     this.switchablePanel.add(this.ckFrameBus, "Bus");
     this.switchablePanel.add(this.ckFrameTrain, "Train");
     this.switchablePanel.add(this.homePage, "Home");
+    this.switchablePanel.add(this.victory , "Victory");
 
     this.switchableCL = (CardLayout)(this.switchablePanel.getLayout());
     this.switchableCL.show(this.switchablePanel, "Home");
@@ -100,4 +103,11 @@ public class MainFrame extends JFrame {
   public CardLayout getSwitchableCL() {
     return this.switchableCL;
   }
+
+  /**
+    * Displays the victory screen
+    */
+    public void victory() {
+      this.switchableCL.show(this.switchablePanel , "Victory");
+    }
 }
