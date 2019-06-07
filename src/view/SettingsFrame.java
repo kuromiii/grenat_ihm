@@ -3,6 +3,8 @@ package view;
 import java.awt.*;
 import javax.swing.*;
 
+import controller.*;
+
 public class SettingsFrame extends JPanel {
 
   // The switchable panel
@@ -14,6 +16,8 @@ public class SettingsFrame extends JPanel {
   private AccessibilityFrame accessibilityFrame;
   private BatteryUsageFrame batteryUsageFrame;
   private DataUsageFrame dataUsageFrame;
+
+  private JList<String> settingsList;
 
   /**
    * SettingsFrame constructor.
@@ -30,9 +34,10 @@ public class SettingsFrame extends JPanel {
     this.setLayout(new BorderLayout());
     String[] settings = {"Apparence", "Accessibilite",
      "Utilisation de la batterie", "Utilisation du reseau"};
-    JList<String> list = new JList<String>(settings);
+    this.settingsList = new JList<String>(settings);
+    this.settingsList.addListSelectionListener(new SettingsListListener(this));
 
-    this.add(list,BorderLayout.WEST);
+    this.add(this.settingsList, BorderLayout.WEST);
 
     this.appearanceFrame = new AppearanceFrame();
     this.accessibilityFrame = new AccessibilityFrame();
