@@ -5,6 +5,8 @@ import javax.swing.*;
 
 public class SettingsFrame extends JPanel {
 
+  private JPanel switchablePanel;
+
   /**
    * SettingsFrame constructor.
    * Initializes components.
@@ -24,5 +26,7 @@ public class SettingsFrame extends JPanel {
 
     this.setLayout(new BorderLayout());
     this.add(list,BorderLayout.WEST);
+
+    this.switchablePanel = new JPanel(new CardLayout());
   }
 }
