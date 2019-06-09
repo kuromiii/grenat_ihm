@@ -25,7 +25,6 @@ public class SettingsFrame extends JPanel {
 
   // Different panels of the settings
   private AppearanceFrame appearanceFrame;
-  private AccessibilityFrame accessibilityFrame;
   private BatteryUsageFrame batteryUsageFrame;
   private DataUsageFrame dataUsageFrame;
 
@@ -54,7 +53,7 @@ public class SettingsFrame extends JPanel {
    */
   public void initComponents() {
     this.setLayout(new BorderLayout());
-    String[] settings = {"Apparence", "Accessibilite",
+    String[] settings = {"Apparence",
      "Utilisation de la batterie", "Utilisation du reseau"};
     this.settingsList = new JList<String>(settings);
     this.settingsList.addListSelectionListener(new SettingsListListener(this));
@@ -73,7 +72,6 @@ public class SettingsFrame extends JPanel {
 
     // Different settings of the application, needs to be loaded here
     this.appearanceFrame = new AppearanceFrame(this.topBar);
-    this.accessibilityFrame = new AccessibilityFrame();
     this.batteryUsageFrame = new BatteryUsageFrame(this.batteryLabel);
     this.dataUsageFrame = new DataUsageFrame(this.wifiLabel);
 
@@ -81,7 +79,6 @@ public class SettingsFrame extends JPanel {
 
     // Then we need to add the different panels to the switchable panel's list
     this.switchablePanel.add(this.appearanceFrame, "Apparence");
-    this.switchablePanel.add(this.accessibilityFrame, "Accessibilite");
     this.switchablePanel.add(this.batteryUsageFrame, "Utilisation de la batterie");
     this.switchablePanel.add(this.dataUsageFrame, "Utilisation du reseau");
 
