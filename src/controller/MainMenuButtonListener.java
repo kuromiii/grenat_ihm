@@ -13,9 +13,9 @@ public class MainMenuButtonListener implements ActionListener {
 
   /**
    * MainMenuButtonListener constructor.
-   * Checks if given parameters are valid, and throws an exception otherwise
+   * Checks if given parameters are valid, and throws an exception otherwise.
    * @param mainF the main frame, containing the switchable panel
-   * @param mainMenuF the man menu panel, containing the buttons
+   * @param mainMenuF the main menu panel, containing the buttons
    */
   public MainMenuButtonListener(MainFrame mainF, MainMenuFrame mainMenuF) {
     if (mainF != null && mainMenuF != null) {

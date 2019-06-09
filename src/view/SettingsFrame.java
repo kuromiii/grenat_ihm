@@ -29,11 +29,14 @@ public class SettingsFrame extends JPanel {
   private BatteryUsageFrame batteryUsageFrame;
   private DataUsageFrame dataUsageFrame;
 
+  // The setting list
   private JList<String> settingsList;
 
   /**
    * SettingsFrame constructor.
-   * Initializes components.
+   * Checks if parent is valid, throws an error otherwise.
+   * Then, initializes components.
+   * @param topBar the topBar used in the application
    */
   public SettingsFrame(TopBar topBar) {
     if (topBar != null) {

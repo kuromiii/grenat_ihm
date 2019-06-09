@@ -6,7 +6,7 @@ import java.awt.event.*;
 import view.*;
 
 public class VehicleButtonListener implements ActionListener {
-  // The main frame, containing the swi switchable panel
+  // The main frame, containing the switchable panel
   private MainFrame mainF;
   // The vehicle frame, containing the buttons
   private VehicleFrame vehiF;

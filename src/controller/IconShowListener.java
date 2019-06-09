@@ -8,13 +8,14 @@ import javax.swing.*;
 import view.*;
 
 public class IconShowListener implements ActionListener {
+    // The image so show or hide
+    private JLabel img;
 
-  private JLabel img;
-
-  /**
-    * IconShowListener constructor
-    * @param img the label containing the image to show or to hide
-    */
+    /**
+     * IconShowListener constructor
+     * Checks if given parameters are valid, and throws an exception otherwise.
+     * @param img the label containing the image to show or to hide
+     */
     public IconShowListener (JLabel img) {
       if (img != null) {
         this.img = img;
@@ -24,10 +25,10 @@ public class IconShowListener implements ActionListener {
       }
     }
 
-  /**
-    * Hide or show an image when the button is clicked
-    * @param e the event
-    */
+    /**
+     * Shows or hides an image when the button is clicked
+     * @param e the action event
+     */
     public void actionPerformed (ActionEvent e) {
       if (((JButton)e.getSource()).getText().equalsIgnoreCase("Hide battery use")) {
         this.img.setVisible(false);
