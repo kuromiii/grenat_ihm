@@ -31,7 +31,7 @@ public class HomePageFrame extends JPanel {
    * Initializes components of the Panel.
    */
   public void initComponents() {
-    Image logo = (new ImageIcon("../img/Logo.png")).getImage();
+    Image logo = (new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/Logo.png")))).getImage();
     Image rescaledLogo = logo.getScaledInstance(500, 500, Image.SCALE_SMOOTH);
 
     this.logoBtn = new JButton();

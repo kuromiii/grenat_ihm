@@ -36,7 +36,7 @@ public class TopBar extends JPanel {
 
     // Logo button
     this.logoBtn = new JButton();
-    this.logoBtn.setIcon(new ImageIcon("../img/LogoSmall.png"));
+    this.logoBtn.setIcon(new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/LogoSmall.png"))));
     this.logoBtn.setOpaque(false);
     this.logoBtn.setContentAreaFilled(false);
     this.logoBtn.setBorderPainted(false);

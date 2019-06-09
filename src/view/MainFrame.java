@@ -31,7 +31,7 @@ public class MainFrame extends JFrame {
     super("Grenat");
 
     // Set the application's logo
-    this.setIconImage(new ImageIcon(("../img/Logo.png")).getImage());
+    this.setIconImage(new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/Logo.png"))).getImage());
 
     this.getContentPane().setLayout(new BorderLayout());
 

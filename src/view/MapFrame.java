@@ -35,19 +35,19 @@ public class MapFrame extends JPanel {
 
       JPanel beginPanel = new JPanel(new GridLayout(1,2));
       beginPanel.add(this.addressBeginField);
-      beginPanel.add(new JLabel(new ImageIcon("../img/Pin.png")));
+      beginPanel.add(new JLabel(new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/Pin.png")))));
       itineraire.add(beginPanel);
 
       JPanel endPanel = new JPanel(new GridLayout(1,2));
       endPanel.add(this.addressEndField);
-      endPanel.add(new JLabel(new ImageIcon("../img/HousePin.png")));
+      endPanel.add(new JLabel(new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/HousePin.png")))));
       itineraire.add(endPanel);
 
       upperLeft.add(itineraire,BorderLayout.NORTH);
       upperLeft.add(hack,BorderLayout.SOUTH);
 
       this.add(upperLeft, BorderLayout.WEST);
-      this.add(new JLabel(new ImageIcon("../img/map.png")),BorderLayout.CENTER);
+      this.add(new JLabel(new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/map.png")))),BorderLayout.CENTER);
     }
 
 }

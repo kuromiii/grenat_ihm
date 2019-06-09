@@ -14,8 +14,8 @@ public class SettingsFrame extends JPanel {
   private JPanel down;
 
   // Images used for battery and wifi
-  private final Image battery = new ImageIcon("../img/Batterie.png").getImage();
-  private final Image wifi = new ImageIcon("../img/Wifi.png").getImage();
+  private final Image battery = new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/Batterie.png"))).getImage();
+  private final Image wifi = new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/Wifi.png"))).getImage();
   private JLabel batteryLabel;
   private JLabel wifiLabel;
 

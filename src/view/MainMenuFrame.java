@@ -38,15 +38,15 @@ public class MainMenuFrame extends JPanel {
       MainMenuButtonListener mainMenuListener = new MainMenuButtonListener(this.parent, this);
 
       // Map Image
-      Image mapImg = (new ImageIcon("../img/Itineraire.png")).getImage();
+      Image mapImg = (new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/Itineraire.png")))).getImage();
       Image rescaledMapImg = mapImg.getScaledInstance(120,120,Image.SCALE_SMOOTH);
 
       // Calendar Image
-      Image calendarImg = (new ImageIcon("../img/Agenda.png")).getImage();
+      Image calendarImg = (new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/Agenda.png")))).getImage();
       Image rescaledCalendarImg = calendarImg.getScaledInstance(120,120,Image.SCALE_SMOOTH);
 
       // Vehicle Image
-      Image vehicleImg = (new ImageIcon("../img/Transport.png")).getImage();
+      Image vehicleImg = (new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/Transport.png")))).getImage();
       Image rescaledVehicleImg = vehicleImg.getScaledInstance(120,120,Image.SCALE_SMOOTH);
 
       // Map Button

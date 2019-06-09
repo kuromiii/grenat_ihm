@@ -38,15 +38,15 @@ public class VehicleFrame extends JPanel {
       VehicleButtonListener vehiListener = new VehicleButtonListener(this.parent, this);
 
       // Bus image
-      Image busImg = (new ImageIcon("../img/Bus.png")).getImage();
+      Image busImg = (new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/Bus.png")))).getImage();
       Image rescaledBusImg = busImg.getScaledInstance(120,120,Image.SCALE_SMOOTH);
 
       // Metro image
-      Image metroImg = (new ImageIcon("../img/Metro.png")).getImage();
+      Image metroImg = (new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/Metro.png")))).getImage();
       Image rescaledMetroImg = metroImg.getScaledInstance(120,120,Image.SCALE_SMOOTH);
 
       // Train image
-      Image trainImg = (new ImageIcon("../img/Train.png")).getImage();
+      Image trainImg = (new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/Train.png")))).getImage();
       Image rescaledTrainImg = trainImg.getScaledInstance(120,120,Image.SCALE_SMOOTH);
 
       // Bus button

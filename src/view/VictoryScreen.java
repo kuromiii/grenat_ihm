@@ -30,7 +30,7 @@ public class VictoryScreen extends JPanel {
     public void initComponents() {
       this.setLayout(new BorderLayout());
 
-      Image cupImg = (new ImageIcon("../img/Coupe.png")).getImage();
+      Image cupImg = (new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/Coupe.png")))).getImage();
       Image rescaledCupImg = cupImg.getScaledInstance(300, 450, Image.SCALE_SMOOTH);
 
       JLabel background = new JLabel(new ImageIcon(rescaledCupImg));
