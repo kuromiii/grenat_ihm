@@ -58,10 +58,15 @@ public class SettingsFrame extends JPanel {
 
     this.add(this.settingsList, BorderLayout.WEST);
 
-    this.down = new JPanel(new GridLayout(1,4));
+    this.down = new JPanel(new BorderLayout());
 
-    this.batteryLabel = new JLabel(new ImageIcon(this.battery));
-    this.wifiLabel = new JLabel(new ImageIcon(this.wifi));
+    Image sizedBattery = this.battery.getScaledInstance(40, 30, Image.SCALE_DEFAULT);
+    Image sizedWifi = this.wifi.getScaledInstance(40, 30, Image.SCALE_DEFAULT);
+
+    this.batteryLabel = new JLabel(new ImageIcon(sizedBattery));
+    this.wifiLabel = new JLabel(new ImageIcon(sizedWifi));
+    this.batteryLabel.setVisible(false);
+    this.wifiLabel.setVisible(false);
 
     this.appearanceFrame = new AppearanceFrame(this.topBar);
     this.accessibilityFrame = new AccessibilityFrame();
@@ -81,17 +86,14 @@ public class SettingsFrame extends JPanel {
 
     this.add(this.switchablePanel);
 
-    this.down.add(new JPanel());
-    this.down.add(new JPanel());
-    this.down.add(new JPanel());
 
     JPanel icons = new JPanel(new GridLayout(1,2));
     icons.add(this.batteryLabel);
     icons.add(this.wifiLabel);
-    this.batteryLabel.setVisible(false);
-    this.wifiLabel.setVisible(false);
+    this.batteryLabel.setSize(5,5);
+    this.wifiLabel.setSize(5,5);
 
-    this.down.add(icons);
+    this.down.add(icons,BorderLayout.EAST);
 
     this.add(this.down,BorderLayout.SOUTH);
   }

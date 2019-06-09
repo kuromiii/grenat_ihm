@@ -3,6 +3,8 @@ package view;
 import java.awt.*;
 import javax.swing.*;
 
+import controller.IconShowListener;
+
 public class BatteryUsageFrame extends JPanel {
 
   private JButton button;
@@ -31,12 +33,19 @@ public class BatteryUsageFrame extends JPanel {
 
       this.button = new JButton("Show battery use");
 
-      JPanel container = new JPanel(new GridLayout(1,3));
-      container.add(new JPanel());
+      JPanel container = new JPanel(new GridLayout(3,3));
+
+      for (int i = 0 ; i < 5 ; i++) {
+        container.add(new JLabel());
+      }
       container.add(this.button);
-      container.add(new JPanel());
+      for (int i = 0 ; i < 5 ; i++) {
+        container.add(new JLabel());
+      }
 
       this.add(container,BorderLayout.CENTER);
+
+      this.button.addActionListener(new IconShowListener(this.batteryLabel));
 
     }
 }

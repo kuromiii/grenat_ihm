@@ -41,7 +41,7 @@ public class IconShowListener implements ActionListener {
         this.img.setVisible(true);
         ((JButton)e.getSource()).setText("Hide wifi");
       }
-      else if (((JButton)e.getSource()).getText().equalsIgnoreCase("Hide battery use")) {
+      else if (((JButton)e.getSource()).getText().equalsIgnoreCase("Show battery use")) {
         this.img.setVisible(true);
         ((JButton)e.getSource()).setText("Hide battery use");
       }
