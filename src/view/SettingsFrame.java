@@ -74,7 +74,7 @@ public class SettingsFrame extends JPanel {
     this.appearanceFrame = new AppearanceFrame(this.topBar);
     this.accessibilityFrame = new AccessibilityFrame();
     this.batteryUsageFrame = new BatteryUsageFrame(this.batteryLabel);
-    this.dataUsageFrame = new DataUsageFrame();
+    this.dataUsageFrame = new DataUsageFrame(this.wifiLabel);
 
     this.switchablePanel = new JPanel(new CardLayout());
 

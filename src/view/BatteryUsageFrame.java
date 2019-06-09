@@ -13,7 +13,7 @@ public class BatteryUsageFrame extends JPanel {
     /**
      * BatteryUsageFrame constructor.
      * Initializes components.
-     * @param battery the battery image to use
+     * @param batteryLabel the battery label to use
      */
     public BatteryUsageFrame(JLabel batteryLabel) {
       if (batteryLabel != null) {
