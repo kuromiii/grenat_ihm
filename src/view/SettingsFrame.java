@@ -10,6 +10,15 @@ public class SettingsFrame extends JPanel {
   // The TopBar used in the application
   private TopBar topBar;
 
+  // The bottom panel used for displaying battery and wifi
+  private JPanel down;
+
+  // Images used for battery and wifi
+  private final Image battery = new ImageIcon("../img/Batterie.png").getImage();
+  private final Image wifi = new ImageIcon("../img/Wifi.png").getImage();
+  private JLabel batteryLabel;
+  private JLabel wifiLabel;
+
   // The switchable panel
   private JPanel switchablePanel;
   private CardLayout switchableCL;
@@ -49,9 +58,14 @@ public class SettingsFrame extends JPanel {
 
     this.add(this.settingsList, BorderLayout.WEST);
 
+    this.down = new JPanel(new GridLayout(1,4));
+
+    this.batteryLabel = new JLabel(new ImageIcon(this.battery));
+    this.wifiLabel = new JLabel(new ImageIcon(this.wifi));
+
     this.appearanceFrame = new AppearanceFrame(this.topBar);
     this.accessibilityFrame = new AccessibilityFrame();
-    this.batteryUsageFrame = new BatteryUsageFrame();
+    this.batteryUsageFrame = new BatteryUsageFrame(this.batteryLabel);
     this.dataUsageFrame = new DataUsageFrame();
 
     this.switchablePanel = new JPanel(new CardLayout());
@@ -66,6 +80,20 @@ public class SettingsFrame extends JPanel {
     this.switchableCL.show(this.switchablePanel, "Apparence");
 
     this.add(this.switchablePanel);
+
+    this.down.add(new JPanel());
+    this.down.add(new JPanel());
+    this.down.add(new JPanel());
+
+    JPanel icons = new JPanel(new GridLayout(1,2));
+    icons.add(this.batteryLabel);
+    icons.add(this.wifiLabel);
+    this.batteryLabel.setVisible(false);
+    this.wifiLabel.setVisible(false);
+
+    this.down.add(icons);
+
+    this.add(this.down,BorderLayout.SOUTH);
   }
 
   /**

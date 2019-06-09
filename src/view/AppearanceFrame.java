@@ -15,6 +15,7 @@ public class AppearanceFrame extends JPanel {
     /**
      * AppearanceFrame constructor.
      * Initializes components.
+     * @param topBar the TopBar of the application
      */
     public AppearanceFrame(TopBar topBar) {
       if (topBar != null) {
