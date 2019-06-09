@@ -4,12 +4,23 @@ import java.awt.*;
 import javax.swing.*;
 
 public class BatteryUsageFrame extends JPanel {
+
+  private JButton button;
+  private JLabel batteryLabel;
+
     /**
      * BatteryUsageFrame constructor.
      * Initializes components.
+     * @param battery the battery image to use
      */
-    public BatteryUsageFrame() {
-          this.initComponents();
+    public BatteryUsageFrame(JLabel batteryLabel) {
+      if (batteryLabel != null) {
+        this.batteryLabel = batteryLabel;
+        this.initComponents();
+      }
+      else {
+        throw new NullPointerException();
+      }
     }
 
     /**
@@ -17,5 +28,15 @@ public class BatteryUsageFrame extends JPanel {
      */
     public void initComponents() {
       this.setLayout(new BorderLayout());
+
+      this.button = new JButton("Show battery use");
+
+      JPanel container = new JPanel(new GridLayout(1,3));
+      container.add(new JPanel());
+      container.add(this.button);
+      container.add(new JPanel());
+
+      this.add(container,BorderLayout.CENTER);
+
     }
 }
