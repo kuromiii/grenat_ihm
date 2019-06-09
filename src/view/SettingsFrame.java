@@ -71,6 +71,7 @@ public class SettingsFrame extends JPanel {
     this.batteryLabel.setVisible(false);
     this.wifiLabel.setVisible(false);
 
+    // Different settings of the application, needs to be loaded here
     this.appearanceFrame = new AppearanceFrame(this.topBar);
     this.accessibilityFrame = new AccessibilityFrame();
     this.batteryUsageFrame = new BatteryUsageFrame(this.batteryLabel);
@@ -89,7 +90,7 @@ public class SettingsFrame extends JPanel {
 
     this.add(this.switchablePanel);
 
-
+    // Battery and data usage icons
     JPanel icons = new JPanel(new GridLayout(1,2));
     icons.add(this.batteryLabel);
     icons.add(this.wifiLabel);
