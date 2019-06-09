@@ -14,7 +14,9 @@ public class AppearanceListener implements ActionListener {
 
   /**
     * AppearanceListener constructor
+    * Checks if given parameters are valid, and throws an exception otherwise.
     * @param topBar the topBar used in the application
+    * @param color the color that will be given to the topBar when a Button gets clicked
     */
     public AppearanceListener (TopBar topBar , Color color) {
       if (topBar != null && color != null) {
