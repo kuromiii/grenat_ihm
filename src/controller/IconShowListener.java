@@ -30,21 +30,21 @@ public class IconShowListener implements ActionListener {
      * @param e the action event
      */
     public void actionPerformed (ActionEvent e) {
-      if (((JButton)e.getSource()).getText().equalsIgnoreCase("Hide battery use")) {
+      if (((JButton)e.getSource()).getText().equalsIgnoreCase("Cacher batterie")) {
         this.img.setVisible(false);
-        ((JButton)e.getSource()).setText("Show battery use");
+        ((JButton)e.getSource()).setText("Afficher batterie");
       }
-      else if (((JButton)e.getSource()).getText().equalsIgnoreCase("Hide wifi")) {
+      else if (((JButton)e.getSource()).getText().equalsIgnoreCase("Cacher wifi")) {
         this.img.setVisible(false);
-        ((JButton)e.getSource()).setText("Show wifi");
+        ((JButton)e.getSource()).setText("Afficher wifi");
       }
-      else if (((JButton)e.getSource()).getText().equalsIgnoreCase("Show wifi")) {
+      else if (((JButton)e.getSource()).getText().equalsIgnoreCase("Afficher wifi")) {
         this.img.setVisible(true);
-        ((JButton)e.getSource()).setText("Hide wifi");
+        ((JButton)e.getSource()).setText("Cacher wifi");
       }
-      else if (((JButton)e.getSource()).getText().equalsIgnoreCase("Show battery use")) {
+      else if (((JButton)e.getSource()).getText().equalsIgnoreCase("Afficher batterie")) {
         this.img.setVisible(true);
-        ((JButton)e.getSource()).setText("Hide battery use");
+        ((JButton)e.getSource()).setText("Cacher batterie");
       }
     }
 }

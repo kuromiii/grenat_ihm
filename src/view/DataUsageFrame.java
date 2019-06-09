@@ -31,7 +31,7 @@ public class DataUsageFrame extends JPanel {
     public void initComponents() {
       this.setLayout(new BorderLayout());
 
-      this.button = new JButton("Show wifi");
+      this.button = new JButton("Afficher wifi");
 
       JPanel container = new JPanel(new GridLayout(3,3));
 

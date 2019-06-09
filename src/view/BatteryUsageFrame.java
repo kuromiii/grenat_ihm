@@ -31,7 +31,7 @@ public class BatteryUsageFrame extends JPanel {
     public void initComponents() {
       this.setLayout(new BorderLayout());
 
-      this.button = new JButton("Show battery use");
+      this.button = new JButton("Afficher batterie");
 
       JPanel container = new JPanel(new GridLayout(3,3));
 
