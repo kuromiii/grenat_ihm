@@ -31,11 +31,6 @@ public class AppearanceListener implements ActionListener {
     * @param e the event
     */
     public void actionPerformed (ActionEvent e) {
-      if (this.topBar != null && this.color != null) {
         this.topBar.setColor(this.color);
-      }
-      else {
-        throw new NullPointerException();
-      }
     }
 }

@@ -9,6 +9,8 @@ public class TopBar extends JPanel {
   private MainFrame parent;
   // Buttons
   private JButton logoBtn, mapBtn, vehicleBtn, calendarBtn, settingsBtn;
+  // Button panel
+  private JPanel bPanel;
   // Background color
   private Color color = new Color(173, 20, 87);
 
@@ -56,15 +58,15 @@ public class TopBar extends JPanel {
     this.settingsBtn = new JButton("Parametres");
     this.settingsBtn.addActionListener(topBarListener);
 
-    JPanel b = new JPanel();
-    b.add(this.logoBtn);
-    b.add(this.mapBtn);
-    b.add(this.vehicleBtn);
-    b.add(this.calendarBtn);
-    b.add(this.settingsBtn);
-    b.setBackground(color);
+    this.bPanel = new JPanel();
+    this.bPanel.add(this.logoBtn);
+    this.bPanel.add(this.mapBtn);
+    this.bPanel.add(this.vehicleBtn);
+    this.bPanel.add(this.calendarBtn);
+    this.bPanel.add(this.settingsBtn);
+    this.bPanel.setBackground(color);
 
-    this.add(b);
+    this.add(this.bPanel);
     this.setBackground(color);
   }
 
@@ -123,6 +125,8 @@ public class TopBar extends JPanel {
     public void setColor (Color color) {
       if (color != null) {
         this.color = color;
+        this.setBackground(color);
+        this.bPanel.setBackground(color);
       }
       else {
         throw new NullPointerException();
