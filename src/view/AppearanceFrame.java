@@ -31,12 +31,15 @@ public class AppearanceFrame extends JPanel {
      * Initializes components of the panel.
      */
     public void initComponents() {
-      this.setLayout(new GridLayout(5,3));
+      this.setLayout(new GridLayout(6,3));
 
       this.defaultAppearance = new JButton ("Grenat Theme");
       this.lightThemeAppearance = new JButton("Light Theme");
       this.darkThemeAppearance = new JButton("Dark Theme");
 
+      this.add(new JPanel());
+      this.add(new JPanel());
+      this.add(new JPanel());
       this.add(new JPanel());
       this.add(this.defaultAppearance);
       this.add(new JPanel());
