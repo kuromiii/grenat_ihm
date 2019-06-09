@@ -10,7 +10,7 @@ public class TopBar extends JPanel {
   // Buttons
   private JButton logoBtn, mapBtn, vehicleBtn, calendarBtn, settingsBtn;
   // Background color
-  private static final Color COLOR = new Color(173, 20, 87);
+  private Color color = new Color(173, 20, 87);
 
   /**
    * TopBar constructor.
@@ -62,10 +62,10 @@ public class TopBar extends JPanel {
     b.add(this.vehicleBtn);
     b.add(this.calendarBtn);
     b.add(this.settingsBtn);
-    b.setBackground(COLOR);
+    b.setBackground(color);
 
     this.add(b);
-    this.setBackground(COLOR);
+    this.setBackground(color);
   }
 
   /**
@@ -107,4 +107,25 @@ public class TopBar extends JPanel {
   public JButton getSettingsButton() {
     return this.settingsBtn;
   }
+
+  /**
+    * Returns the color of the TopBar, used by AppearenceListener
+    * @return the color of the TopBar
+    */
+    public Color getColor() {
+      return this.color;
+    }
+
+  /**
+    * Set the color of the TopBar to a new value
+    * @param color the color to set
+    */
+    public void setColor (Color color) {
+      if (color != null) {
+        this.color = color;
+      }
+      else {
+        throw new NullPointerException();
+      }
+    }
 }

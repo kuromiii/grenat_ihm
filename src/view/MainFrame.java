@@ -59,7 +59,7 @@ public class MainFrame extends JFrame {
     this.mainMenuFrame = new MainMenuFrame(this);
     this.calenderFrame = new CalenderFrame();
     this.mapFrame = new MapFrame();
-    this.settingsFrame = new SettingsFrame();
+    this.settingsFrame = new SettingsFrame(this.topBar);
     this.vehicleFrame = new VehicleFrame(this);
     this.ckFrameMetro = new ChecklistFrameMetro(this);
     this.ckFrameBus = new ChecklistFrameBus(this);

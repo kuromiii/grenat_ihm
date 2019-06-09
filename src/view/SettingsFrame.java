@@ -7,6 +7,9 @@ import controller.*;
 
 public class SettingsFrame extends JPanel {
 
+  // The TopBar used in the application
+  private TopBar topBar;
+
   // The switchable panel
   private JPanel switchablePanel;
   private CardLayout switchableCL;
@@ -23,8 +26,15 @@ public class SettingsFrame extends JPanel {
    * SettingsFrame constructor.
    * Initializes components.
    */
-  public SettingsFrame() {
-    this.initComponents();
+  public SettingsFrame(TopBar topBar) {
+    if (topBar != null) {
+      this.topBar = topBar;
+      this.initComponents();
+    }
+    else {
+      throw new NullPointerException();
+    }
+
   }
 
   /**
@@ -39,7 +49,7 @@ public class SettingsFrame extends JPanel {
 
     this.add(this.settingsList, BorderLayout.WEST);
 
-    this.appearanceFrame = new AppearanceFrame();
+    this.appearanceFrame = new AppearanceFrame(this.topBar);
     this.accessibilityFrame = new AccessibilityFrame();
     this.batteryUsageFrame = new BatteryUsageFrame();
     this.dataUsageFrame = new DataUsageFrame();
