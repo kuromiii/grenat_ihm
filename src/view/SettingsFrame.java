@@ -62,8 +62,8 @@ public class SettingsFrame extends JPanel {
     this.switchablePanel.add(this.batteryUsageFrame, "Utilisation de la batterie");
     this.switchablePanel.add(this.dataUsageFrame, "Utilisation du reseau");
 
-    this.switchablePanel = new JPanel(new CardLayout());
     this.switchableCL = (CardLayout)(this.switchablePanel.getLayout());
+    this.switchableCL.show(this.switchablePanel, "Apparence");
 
     this.add(this.switchablePanel);
   }
